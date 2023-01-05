@@ -1,0 +1,44 @@
+﻿@using Itqan.Models
+@using Itqan.ItqanApi
+@using Itqan.Ressourse
+@using System.Configuration
+@{
+    ItqanEntities db = new ItqanEntities();
+    var _tutorialsRepo = new CourseRepository(HttpContext.Current);
+    var _tuts = _tutorialsRepo.GetTutorials();
+    var url = ConfigurationManager.AppSettings["PortalUrl"];
+}
+<div class="row">
+    @foreach (var course in _tuts)
+    {
+        var imageUrl = url + "images/tutorial/" + course.ImageUrl;
+        var tutUrl = url + "Report/GetTutorial/" + course.Id;
+        <div class="col-md-4">
+            <div class="tab2-services-box">
+                <div class="media">
+                    <img src="@imageUrl" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                </div>
+                <div class="services-info">
+                    <h4 style="">@Html.DisplayFor(model => course.Title)</h4>
+                    <p>
+                        @Html.Raw(course.Descr)
+                        <br />
+                        <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                        @Html.DisplayFor(mode => course.OpenDate)
+                        <br />
+                        <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                        @Html.DisplayFor(mode => course.CloseDate)
+                    </p>
+                    <br />
+                    <a href="@tutUrl" class="btn btn-green" style="min-width:150px;margin-top:15px;">@resourse.Detiles</a>
+                </div>
+
+
+            </div>
+        </div>
+    }
+
+</div>
+
+
+

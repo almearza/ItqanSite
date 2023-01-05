@@ -1,0 +1,462 @@
+﻿
+
+@using Itqan.Models
+@using Itqan.Ressourse
+@using System.Data.Entity;
+
+@{
+    ItqanEntities db = new ItqanEntities();
+
+
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null && userLang["langId"] != null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+<section class="section" id="works">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content-tab-1">
+                    <ul class="nav" style="display:block">
+                        <li class="active" style="">
+                            <a aria-expanded="true" href="#tab-content-1" data-toggle="tab">
+                                @*<i class="fa fa-desktop"></i>*@
+
+                                <h4>@resourse.All</h4>
+                            </a>
+                            <div class="tab-arrow">
+                            </div>
+                        </li>                      
+
+                        <li class="nav-item">
+                            <a aria-expanded="true" href="#tab-content-3" data-toggle="tab">
+                                @*<i class="fa fa-institution"></i>*@
+                                <h4>@resourse.Arabic </h4>
+                            </a>
+                            <div class="tab-arrow">
+                            </div>
+                        </li>
+
+                        <li>
+                            <a aria-expanded="true" href="#tab-content-4" data-toggle="tab">
+                                @*<i class="fa fa-pagelines"></i>*@
+                                <h4>@resourse.Links </h4>
+                            </a>
+                            <div class="tab-arrow">
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div class="tab-content-main">
+                        <div class="container">
+                            <div class="tab-content">
+                                <div class="tab-pane active in" id="tab-content-1">
+                                    @Html.Partial("_course1");
+
+                                    @*<div class="row" style="">
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media" style="">
+                        <img src="~/Uploads/courseItqan.jpg" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info" style="">
+                        <h4 style="">القران الكريم</h4>
+                        <p style="">
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media" style="">
+                        <img src="~/Uploads/courseItqan.jpg" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info" style="">
+                        <h4 style="">القران الكريم</h4>
+                        <p style="">
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media">
+                        <img src="~/Uploads/course100.jpg" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info">
+                        <h4 style="">القران الكريم</h4>
+                        <p style="">
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media">
+                        <img src="~/Uploads/course77.jpg" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info">
+                        <h4 style="">القران الكريم</h4>
+                        <p style="">
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media">
+                        <img src="~/Uploads/course33.jpg" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info">
+                        <h4 style="">القران الكريم</h4>
+                        <p style="">
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media">
+                        <img src="~/Uploads/courseItqan4.jpg" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info">
+                        <h4 style="">القران الكريم</h4>
+                        <p style="">
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media">
+                        <img src="~/Uploads/courseItqan5.jpg" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info">
+                        <h4 style="">القران الكريم</h4>
+                        <p style="">
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media">
+                        <img src="~/Uploads/courseItqan5.jpg" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info">
+                        <h4 style="">القران الكريم</h4>
+                        <p style="">
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media">
+                        <img src="~/Uploads/course99.jpg" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info">
+                        <h4>القران الكريم</h4>
+                        <p>
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media">
+                        <img src="~/Uploads/course63.jpg" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info">
+                        <h4>القران الكريم</h4>
+                        <p>
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media">
+                        <img src="~/Uploads/course64.png" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info">
+                        <h4>القران الكريم</h4>
+                        <p>
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="col-md-4" style="padding-bottom: 20px;">
+                <div class="tab1-services-box">
+                    <div class="media">
+                        <img src="~/Uploads/10.png" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                    </div>
+
+                    <div class="services-info">
+                        <h4>القران الكريم</h4>
+                        <p>
+                            قاء لتطوير وزيادة سرعة القراعة والإستيعاب
+                            لدى طلاب المرحلة الابتدائية ، يتم فيها استعراض مجموعة من التقنيات لزيادة سرعة القراءة مع الاستيعاب والفهم.
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ الدورة 1/1/1443هـ
+                            <br />
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            تاريخ انتهاء الدورة 1/2/1443هـ
+                        </p>
+                        <a href="#" class="btn btn-green" style="min-width:150px;">@resourse.Detiles</a>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>*@
+
+                                </div>
+                                <!-- End Tab content 1-->
+                                <!-- Start Tab content 2-->
+                                                               
+                                <div class="tab-pane" id="tab-content-3">
+
+                                    <div class="features-tab3">
+                                        <div class="row">
+                                            @foreach (var item in db.App.Where(a => a.Lang == langId))
+                                            {
+                                                <div class="col-md-4">
+                                                    <div class="features-left m-bot-30">
+                                                        <div class="features-item">
+                                                            @if (langId == 1)
+                                                            {
+                                                                <div class="features-icon"> <i class="fas fa-mobile-alt"></i></div>
+                                                            }
+                                                            else
+                                                            {
+                                                           <div class="features-icon"> <i class="fas fa-mobile-alt" style="padding-left: 20px;"></i></div>
+
+                                                            }
+                                                            <div class="features-info">
+                                                                <h4>
+                                                                    @item.Name_App
+                                                                </h4>
+                                                                <p>
+                                                                    @item.Desc_App
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            }
+
+                                        </div>
+                                      <!--Start Features Left-->
+                                        <!--Start Features Image-->
+                                        @*<div class="col-md-4 hidden-xs m-bot-30">
+                                            <img src="~/images/device5.jpg" alt="Features Image" />
+                                        </div>*@
+                                        <!--End Features Image-->
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-pane" id="tab-content-4">
+                                    <div class="row" style="">
+                                        <div class="tab-content-4">
+                                            @foreach (var item in db.Links.Where(a => a.Lang == langId))
+                                            {
+                                                <div class="col-md-4" style="padding-bottom: 20px;">
+                                                    <div class="tab1-services-box">
+                                                        <a href="@Html.DisplayFor(model=>item.link)" target="_blank">
+                                                            <div class="media" style="">
+                                                                <img src="~/Uploads/@Html.DisplayFor(model=>item.IMG_link)" alt="services" style="opacity:1;border-style:solid;padding-bottom:15px;" />
+                                                            </div>
+                                                        </a>
+                                                        <div class="services-info" style="">
+                                                            <h4 style="text-align:center">@item.Descreption_Link</h4>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>                                      
+                                    </div>
+
+                                    </div>
+
+                                </div>
+                        </div>
+                    </div>
+                    <!--/.tab-content-main-->
+                </div>
+            </div>
+
+        </div> <!--/.row-->
+    </div> <!--/.container-->
+</section>

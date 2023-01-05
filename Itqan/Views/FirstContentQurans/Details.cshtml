@@ -1,0 +1,35 @@
+﻿@model Itqan.Models.FirstContentQuran
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FirstContentQuran</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lang1.Name_lang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lang1.Name_lang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Content }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,9 @@
+.owl-carousel .owl-wrapper-outer{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+    /*الاضافة هنا**/
+    direction:ltr;
+    text-align:right
+      
+}

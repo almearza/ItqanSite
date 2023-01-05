@@ -1,0 +1,92 @@
+﻿<!--Start Contact-->
+@using Itqan.Ressourse
+
+<section id="contact" class="section parallax">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+
+            <div class="title-box text-center white">
+                <h2 class="title">تواصل معنا</h2>
+            </div>
+        </div>
+        <!--Start contact form-->
+        @using (Html.BeginForm("_Contact1", "Home", FormMethod.Post, new { enctype = "multipart/form-data", id = "form" }))
+
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="col-md-8 col-md-offset-2 contact-form">
+                <div class="contact-info text-center" style="color: #1f91d0">
+                    <p>0125402411 <i class="fa fa-phone" aria-hidden="true"></i></p>
+                    <p> 0562519810 &nbsp;<i class="fa fa-whatsapp"></i></p>
+                    <p>مقترح-إستفسار--شكوى </p>
+                    <div class="row">
+                        <div class="col-lg-4">
+
+                        </div>
+                        <div class="col-lg-4" style="padding-left: 85px;">
+                            <div class="social-icons">
+                                <ul style="">
+                                    <li><a href="https://twitter.com/alamalcentar?lang=en" target="_blank" style=""><i class="fa fa-twitter" style="font-size:25px;color:#fff;"></i></a></li>
+                                    <li><a href="https://www.snapchat.com/add/alamal.centar?share_id=RjRDRUVG&locale=ar_SA@calendar=gregorian" target="_blank"><i class="fa fa-snapchat" aria-hidden="true" style="font-size:25px;color:#fff;"></i></a></li>
+                                    <li><a href="https://www.instagram.com/alamalcentar/?hl=en" target="_blank"><i class="fa fa-instagram" style="font-size:25px;color:#fff;"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-whatsapp" style="font-size:25px;color:#fff;"></i></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+
+                        </div>
+                    </div>
+                    <p>alamalc.2020@gmail.com </p>
+                    <div class="row">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="alert alert-danger" id="error-div" style="display:none">
+                            <span id="view-err">من فضلك قم بتعبئة البيانات</span>
+                        </div>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.NameSend, new { htmlAttributes = new { @class = "form-control required", id = "uploadIMG", placeholder = resoursear.fullname } })
+                            @Html.ValidationMessageFor(model => model.NameSend, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", id = "email", placeholder = resoursear.Email, type = "email" } })
+                            @*<input class="form-control" id="email" placeholder="Your Email" type="email">*@
+                        </div>
+                        <div class="col-md-4">
+                            @*<input class="form-control" id="subject" placeholder="Subject" type="text">*@
+                            @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control", id = "subject", placeholder = resoursear.Subject, type = "text" } })
+
+                        </div>
+
+                        <div class="col-md-12">
+                            @*<textarea class="form-control" id="message" rows="7" placeholder="Your Message"> </textarea>*@
+                            @Html.TextAreaFor(model => model.ContentMessage, new { @class = "form-control", rows = "7", placeholder = resoursear.Message, id = "ContentMessage" })
+                            @*@Html.TextAreaFor(model => model.ContentMessage, new { htmlAttributes = new { @class = "form-control", id = "message", rows = "7", placeholder = "Your Message" } })*@
+                        </div>
+
+                        <div class="col-md-12 text-right">
+                            <button type="submit" id="btnSaveFormData" class="btn btn-green" style="background:#1f91d0">@resoursear.SendMessage</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        }
+        <!--End contact form-->
+    </div>
+
+    <!-- /.container-->
+
+
+</section>
+<!--End Contact-->
+
+@section scripts{
+
+}
+

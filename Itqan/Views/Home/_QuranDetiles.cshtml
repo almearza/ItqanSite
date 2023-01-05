@@ -1,0 +1,198 @@
+﻿@using Itqan.Models
+@using Itqan.Ressourse
+@{
+    ItqanEntities db = new ItqanEntities();
+
+
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null && userLang["langId"] != null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+
+
+<!--Start single-work -->
+<section id="why-us1" class="wow fadeIn" style="padding-bottom:10px!important;margin-bottom:0px!important; ">
+    <div class="container-fluid">
+        <header class="section-header">
+            <h2 style="color: #1f91d0;padding-bottom:10px;"> @resourse.qudiah</h2>
+          
+        </header>
+        <div class="row">
+            @if (langId == 1)
+            {
+                <div class="col-lg-6">
+                    <div class="why-us1-img">
+                        <img src="~/Uploads/see.jpg" alt="" class="img-fluid" style="width:100%;height:450px;">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="why-us1-content">
+                        <h3 style="color:#777;line-height:1.8 ;padding-bottom:20px;">
+                            @foreach (var item in db.FirstContentQuran.Where(a => a.Lang == langId))
+                            {
+
+                                @item.FirstContent
+                            }
+                        </h3>
+                        @foreach (var item in db.Alnoor.Where(a => a.Lang == langId))
+                        {
+                            <div class="features wow bounceInUp clearfix">
+                                <i class="fa fa-diamond" style=""></i>
+                                <div>
+                                    <p class="">
+                                        @item.AdvantageAlnoor
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="col-lg-6 ">
+                    <div class="why-us1-content">
+                        <h3 style="color:#777;line-height:1.8 ;padding-bottom:20px;">
+                            @foreach (var item in db.FirstContentQuran.Where(a => a.Lang == langId))
+                            {
+
+                                @item.FirstContent
+                            }
+                        </h3>
+                        @foreach (var item in db.Alnoor.Where(a => a.Lang == langId))
+                        {
+                            <div class="features wow bounceInUp clearfix">
+                                <i class="fa fa-diamond" style=""></i>
+                                <div>
+                                    <p class="">
+                                        @item.AdvantageAlnoor
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="why-us1-img">
+                        <img src="~/Uploads/see.jpg" alt="" class="img-fluid" style="width:100%;height:450px;">
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section><!--End single-work -->
+
+<div class="clearfix"></div>
+
+<section id="about" style="background:none;margin-bottom:10px!important;padding:0 0 !important">
+
+    <div class="row about-content">
+        <div class="col-md-12 " style="">
+            <div class="features-icon-box pt-5">
+                <div class="features-info shadow p-3 mb-5 bg-white rounded " style="margin-right:20px;">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;"> @resourse.Privacy</h3>
+                    <ul class="">
+                        @foreach (var item in db.Police.Where(a => a.Lang == langId))
+                        {
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Police1
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+                <div class="features-info  shadow p-3 mb-5 bg-white rounded " style=" margin-right:20px;">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;">  @resourse.RegistrationTerms</h3>
+                    <ul>
+                        @foreach (var item in db.Condition.Where(a => a.Lang == langId))
+                        {
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Descreption_condition
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="features-info  shadow p-3 mb-5 bg-white rounded " style="margin-right:20px;">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;">@resourse.Sesion</h3>
+                    <ul>
+                        @foreach (var item in db.Content_course.Where(a => a.Lang == langId))
+                        {
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Content_desc
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+
+                <div class="features-info shadow p-3 mb-5 bg-white rounded " style=" margin-right:20px;">
+                    @foreach (var item in db.Categore_People.Where(a => a.Lang == langId))
+                    {
+                        <h3 style="color: #1f91d0;padding-bottom:10px;">
+                            @item.Categore_Age
+                        </h3>
+                        <ul>
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Descreption_Categore
+                            </li>
+
+                        </ul>
+
+                    }
+
+                </div>
+
+
+                <div class="features-info shadow p-3 mb-5 bg-white rounded " style=" margin-right:20px;">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;">
+                        @resourse.requiredIT
+                    </h3>
+                    <ul>
+                        @foreach (var item in db.Required_IT.Where(a => a.Lang == langId))
+                        {
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Required_Descreption
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="features-info shadow p-3 mb-5 bg-white rounded " style=" margin-right:20px;">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;">
+                        @resourse.lecture
+                    </h3>
+                    <ul>
+                        @foreach (var item in db.Lesson.Where(a => a.Lang == langId))
+                        {
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Desc_Lesson
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="clearfix"></div>
+
+</section>

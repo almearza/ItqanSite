@@ -1,0 +1,47 @@
+﻿@model Itqan.Models.FirstContentQuran
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal form-label-left">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID_Content)
+
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                اللغة
+                <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                @Html.DropDownList("Lang", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Lang, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                القاعدة النورانية
+                <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                @Html.TextAreaFor(model => model.FirstContent, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstContent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <button type="submit" id="save" class="btn btn-primary">تعديل </button>
+                <a href="~/FirstContentQurans/Index" class="btn btn-primary">رجوع</a>
+
+            </div>
+        </div>
+    </div>
+
+    }
+
+

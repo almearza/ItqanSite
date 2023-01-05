@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Itqan.Models.Categore_People>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+
+    @using (Html.BeginForm())
+    {
+    <table class="table container pb-5">
+        <tr>
+            <th>
+                @Html.DropDownList("Lang", null, htmlAttributes: new { @class = "form-control" })
+            </th>
+            <th class="col-md-1">
+                <input type="submit" value="بحث" class="btn btn-primary" style="max-width:150px;" />
+            </th>
+            <th class="col-md-4">
+                <a href="~/Categore_People/Create" class="btn btn-primary">إضافة</a>
+            </th>
+            
+        </tr>
+    </table>
+    }
+
+<table class="table" style="text-align:center">
+    <tr>
+        <th>
+            الفئة العمرية
+        </th>
+        <th>
+            الوصف
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categore_Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descreption_Categore)
+        </td>
+       
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.ID_categore }) 
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID_categore }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_categore })*@
+        </td>
+    </tr>
+}
+
+</table>

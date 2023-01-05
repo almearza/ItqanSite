@@ -1,0 +1,81 @@
+﻿@using Itqan.Models
+@using Itqan.Ressourse
+
+@using System.Data.Entity;
+
+@{
+    ItqanEntities db = new ItqanEntities();
+
+
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+
+<section id="about" class="" style="background-color:#ffffff">
+    <div class="container">
+        <h2 class="card-title" style="color:#1f91d0;text-align:center;padding-bottom:20px;">
+            @resourse.Itqan
+        </h2>
+
+        <div class="row ">
+            @if (langId == 1)
+            {
+                <div class="col-md-5">
+                    <div class="elementor-image" style="margin-top:100px;">
+                        <img src="~/Uploads/secondpage2.jpg" alt="" style="width: 100%; max-width:100%;">
+                    </div>
+                </div>
+
+
+                <div class="col-md-7">
+                    @foreach (var item in db.Define_Itqan.ToList().Where(a => a.Lang == langId))
+                    {
+                        <div class="section">
+                            <div class="card-body " style="border:none">
+                                <h2 class="card-title" style="color:#1f91d0;font-size: 35px;font-weight: 400;padding-bottom:20px;"> @resourse.aboutus</h2>
+                                <p class="card-text" style="color:#727982;font-weight:600;font-size:17px;">@item.Breife</p>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+
+            }
+
+            else
+            {
+
+                <div class="col-md-7">
+                    @foreach (var item in db.Define_Itqan.ToList().Where(a => a.Lang == langId))
+                    {
+                        <div class="section">
+                            <div class="card-body " style="border:none">
+                                <h2 class="card-title" style="color:#1f91d0;font-size: 35px;font-weight: 400;padding-bottom:20px;">@resourse.aboutus</h2>
+                                <p class="card-text" style="color:#727982;font-weight:600;font-size:17px;">@item.Breife</p>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+                <div class="col-md-5">
+                    <div class="elementor-image" style="margin-top:100px;">
+                        <img src="~/Uploads/secondpage2.jpg" alt="" style="width: 100%; max-width:100%;">
+                    </div>
+                </div>
+
+            }
+
+
+        </div> <!--/.row-->
+    </div> <!--/.container-->
+</section>

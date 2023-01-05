@@ -1,0 +1,1974 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ItqanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alnoor">
+          <Key>
+            <PropertyRef Name="ID_Alnoor" />
+          </Key>
+          <Property Name="ID_Alnoor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Lang" Type="int" />
+          <Property Name="AdvantageAlnoor" Type="nvarchar(max)" />
+          <Property Name="ID_Itqan" Type="int" />
+        </EntityType>
+        <EntityType Name="App">
+          <Key>
+            <PropertyRef Name="ID_App" />
+          </Key>
+          <Property Name="ID_App" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_App" Type="nvarchar" MaxLength="200" />
+          <Property Name="Desc_App" Type="nvarchar(max)" />
+          <Property Name="ID_Itqan" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Card_Feture">
+          <Key>
+            <PropertyRef Name="ID_Star" />
+          </Key>
+          <Property Name="ID_Star" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Star_card" Type="nvarchar(max)" />
+          <Property Name="id_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+          <Property Name="ImageCard" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Categore_People">
+          <Key>
+            <PropertyRef Name="ID_categore" />
+          </Key>
+          <Property Name="ID_categore" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Categore_Age" Type="nvarchar(max)" />
+          <Property Name="Descreption_Categore" Type="nvarchar(max)" />
+          <Property Name="ID_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="ID_register" />
+          </Key>
+          <Property Name="ID_register" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descreption_condition" Type="nvarchar(max)" />
+          <Property Name="ID_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Contact_Withme">
+          <Key>
+            <PropertyRef Name="ID_contact" />
+          </Key>
+          <Property Name="ID_contact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="150" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="150" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="id_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Content_course">
+          <Key>
+            <PropertyRef Name="ID_content" />
+          </Key>
+          <Property Name="ID_content" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Content_desc" Type="nvarchar(max)" />
+          <Property Name="ID_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="ID_course" />
+          </Key>
+          <Property Name="ID_course" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_Course" Type="nvarchar" MaxLength="200" />
+          <Property Name="Descreption_Course" Type="nvarchar(max)" />
+          <Property Name="IMG_course" Type="nvarchar" MaxLength="150" />
+          <Property Name="dateStart" Type="datetime" />
+          <Property Name="id_define" Type="int" />
+          <Property Name="endDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Define_Itqan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_Itqan" Type="nvarchar" MaxLength="100" />
+          <Property Name="Vision" Type="nvarchar(max)" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="Breife" Type="nvarchar(max)" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Feture_Itqan">
+          <Key>
+            <PropertyRef Name="ID_Feutre" />
+          </Key>
+          <Property Name="ID_Feutre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descreption_Feture" Type="nvarchar(max)" />
+          <Property Name="id_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="FirstContentQuran">
+          <Key>
+            <PropertyRef Name="ID_Content" />
+          </Key>
+          <Property Name="ID_Content" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Lang" Type="int" />
+          <Property Name="FirstContent" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Goals">
+          <Key>
+            <PropertyRef Name="ID_Goals" />
+          </Key>
+          <Property Name="ID_Goals" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gaol" Type="nvarchar(max)" />
+          <Property Name="ID_Define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="IMAGE_header">
+          <Key>
+            <PropertyRef Name="ID_Image" />
+          </Key>
+          <Property Name="ID_Image" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titile" Type="nvarchar" MaxLength="50" />
+          <Property Name="descreption" Type="nvarchar(max)" />
+          <Property Name="IMG_Path" Type="nvarchar" MaxLength="150" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Lang1">
+          <Key>
+            <PropertyRef Name="ID_lang" />
+          </Key>
+          <Property Name="ID_lang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_lang" Type="nvarchar" MaxLength="150" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Lesson">
+          <Key>
+            <PropertyRef Name="ID_Lesson" />
+          </Key>
+          <Property Name="ID_Lesson" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Desc_Lesson" Type="nvarchar(max)" />
+          <Property Name="id_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="ID_Link" />
+          </Key>
+          <Property Name="ID_Link" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descreption_Link" Type="nvarchar(max)" />
+          <Property Name="link" Type="nvarchar(max)" />
+          <Property Name="IMG_link" Type="nvarchar" MaxLength="150" />
+          <Property Name="Defien_id" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Plan_Studie">
+          <Key>
+            <PropertyRef Name="ID_Plan" />
+          </Key>
+          <Property Name="ID_Plan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Plan_Studie" Type="nvarchar(max)" />
+          <Property Name="ID_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Police">
+          <Key>
+            <PropertyRef Name="ID_Ploce" />
+          </Key>
+          <Property Name="ID_Ploce" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Police" Type="nvarchar(max)" />
+          <Property Name="id_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Required_IT">
+          <Key>
+            <PropertyRef Name="Required_id" />
+          </Key>
+          <Property Name="Required_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Required_Descreption" Type="nvarchar(max)" />
+          <Property Name="Id_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <EntityType Name="Service_anther">
+          <Key>
+            <PropertyRef Name="ID_Services" />
+          </Key>
+          <Property Name="ID_Services" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Services" Type="nvarchar(max)" />
+          <Property Name="Descreption_services" Type="nvarchar(max)" />
+          <Property Name="IMG_Services" Type="nvarchar" MaxLength="200" />
+          <Property Name="link_services" Type="nvarchar" MaxLength="200" />
+          <Property Name="id_define" Type="int" />
+        </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="ID_video" />
+          </Key>
+          <Property Name="ID_video" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Video" Type="nvarchar" MaxLength="200" />
+          <Property Name="ID_Define" Type="int" />
+        </EntityType>
+        <EntityType Name="Why_Itqan">
+          <Key>
+            <PropertyRef Name="ID_WhyItqan" />
+          </Key>
+          <Property Name="ID_WhyItqan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Why_1" Type="nvarchar(max)" />
+          <Property Name="ID_define" Type="int" />
+          <Property Name="Lang" Type="int" />
+        </EntityType>
+        <Association Name="FK_Alnoor_Define_Itqan1">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Alnoor" Type="Self.Alnoor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alnoor">
+              <PropertyRef Name="ID_Itqan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alnoor_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Alnoor" Type="Self.Alnoor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Alnoor">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AppItqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="App" Type="Self.App" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="App">
+              <PropertyRef Name="ID_Itqan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="App" Type="Self.App" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="App">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Feture_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Card_Feture" Type="Self.Card_Feture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Card_Feture">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Feture_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Card_Feture" Type="Self.Card_Feture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Card_Feture">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categore_People_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Categore_People" Type="Self.Categore_People" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Categore_People">
+              <PropertyRef Name="ID_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categore_People_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Categore_People" Type="Self.Categore_People" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Categore_People">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Condition_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Condition" Type="Self.Condition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Condition">
+              <PropertyRef Name="ID_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Condition_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Condition" Type="Self.Condition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Condition">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_Withme_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Contact_Withme" Type="Self.Contact_Withme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Contact_Withme">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_Withme_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Contact_Withme" Type="Self.Contact_Withme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Contact_Withme">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Content_course_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Content_course" Type="Self.Content_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Content_course">
+              <PropertyRef Name="ID_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Content_course_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Content_course" Type="Self.Content_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Content_course">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Course_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Define_Itqan_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Define_Itqan">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feture_Itqan_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Feture_Itqan" Type="Self.Feture_Itqan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Feture_Itqan">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feture_Itqan_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Feture_Itqan" Type="Self.Feture_Itqan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Feture_Itqan">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FirstContentQuran_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="FirstContentQuran" Type="Self.FirstContentQuran" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="FirstContentQuran">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Goals_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Goals" Type="Self.Goals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Goals">
+              <PropertyRef Name="ID_Define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Goals_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Goals" Type="Self.Goals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Goals">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMAGE_header_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="IMAGE_header" Type="Self.IMAGE_header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="IMAGE_header">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lesson_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Lesson" Type="Self.Lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Lesson">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lesson_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Lesson" Type="Self.Lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Lesson">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Links_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Links" Type="Self.Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="Defien_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Links_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Links" Type="Self.Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Plan_Studie_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Plan_Studie" Type="Self.Plan_Studie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Plan_Studie">
+              <PropertyRef Name="ID_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Plan_Studie_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Plan_Studie" Type="Self.Plan_Studie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Plan_Studie">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Police_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Police" Type="Self.Police" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Police">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Police_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Police" Type="Self.Police" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Police">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Required_IT_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Required_IT" Type="Self.Required_IT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Required_IT">
+              <PropertyRef Name="Id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Required_IT_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Required_IT" Type="Self.Required_IT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Required_IT">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Service_anther_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Service_anther" Type="Self.Service_anther" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Service_anther">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Video" Type="Self.Video" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Video">
+              <PropertyRef Name="ID_Define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Why_Itqan_Define_Itqan">
+          <End Role="Define_Itqan" Type="Self.Define_Itqan" Multiplicity="0..1" />
+          <End Role="Why_Itqan" Type="Self.Why_Itqan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Why_Itqan">
+              <PropertyRef Name="ID_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Why_Itqan_Lang1">
+          <End Role="Lang1" Type="Self.Lang1" Multiplicity="0..1" />
+          <End Role="Why_Itqan" Type="Self.Why_Itqan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Why_Itqan">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ItqanModelStoreContainer">
+          <EntitySet Name="Alnoor" EntityType="Self.Alnoor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App" EntityType="Self.App" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Card_Feture" EntityType="Self.Card_Feture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categore_People" EntityType="Self.Categore_People" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Condition" EntityType="Self.Condition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact_Withme" EntityType="Self.Contact_Withme" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Content_course" EntityType="Self.Content_course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Define_Itqan" EntityType="Self.Define_Itqan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feture_Itqan" EntityType="Self.Feture_Itqan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FirstContentQuran" EntityType="Self.FirstContentQuran" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Goals" EntityType="Self.Goals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMAGE_header" EntityType="Self.IMAGE_header" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lang1" EntityType="Self.Lang1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lesson" EntityType="Self.Lesson" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Links" EntityType="Self.Links" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Plan_Studie" EntityType="Self.Plan_Studie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Police" EntityType="Self.Police" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Required_IT" EntityType="Self.Required_IT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service_anther" EntityType="Self.Service_anther" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Video" EntityType="Self.Video" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Why_Itqan" EntityType="Self.Why_Itqan" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Alnoor_Define_Itqan1" Association="Self.FK_Alnoor_Define_Itqan1">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Alnoor" EntitySet="Alnoor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alnoor_Lang1" Association="Self.FK_Alnoor_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Alnoor" EntitySet="Alnoor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AppItqan" Association="Self.FK_App_AppItqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="App" EntitySet="App" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Lang1" Association="Self.FK_App_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="App" EntitySet="App" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Feture_Define_Itqan" Association="Self.FK_Card_Feture_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Card_Feture" EntitySet="Card_Feture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Feture_Lang1" Association="Self.FK_Card_Feture_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Card_Feture" EntitySet="Card_Feture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categore_People_Define_Itqan" Association="Self.FK_Categore_People_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Categore_People" EntitySet="Categore_People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categore_People_Lang1" Association="Self.FK_Categore_People_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Categore_People" EntitySet="Categore_People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Condition_Define_Itqan" Association="Self.FK_Condition_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Condition" EntitySet="Condition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Condition_Lang1" Association="Self.FK_Condition_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Condition" EntitySet="Condition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_Withme_Define_Itqan" Association="Self.FK_Contact_Withme_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Contact_Withme" EntitySet="Contact_Withme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_Withme_Lang1" Association="Self.FK_Contact_Withme_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Contact_Withme" EntitySet="Contact_Withme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Content_course_Define_Itqan" Association="Self.FK_Content_course_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Content_course" EntitySet="Content_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Content_course_Lang1" Association="Self.FK_Content_course_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Content_course" EntitySet="Content_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Course_Define_Itqan" Association="Self.FK_Course_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Define_Itqan_Lang1" Association="Self.FK_Define_Itqan_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feture_Itqan_Define_Itqan" Association="Self.FK_Feture_Itqan_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Feture_Itqan" EntitySet="Feture_Itqan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feture_Itqan_Lang1" Association="Self.FK_Feture_Itqan_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Feture_Itqan" EntitySet="Feture_Itqan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FirstContentQuran_Lang1" Association="Self.FK_FirstContentQuran_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="FirstContentQuran" EntitySet="FirstContentQuran" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Goals_Define_Itqan" Association="Self.FK_Goals_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Goals" EntitySet="Goals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Goals_Lang1" Association="Self.FK_Goals_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Goals" EntitySet="Goals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMAGE_header_Lang1" Association="Self.FK_IMAGE_header_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="IMAGE_header" EntitySet="IMAGE_header" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lesson_Define_Itqan" Association="Self.FK_Lesson_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Lesson" EntitySet="Lesson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lesson_Lang1" Association="Self.FK_Lesson_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Lesson" EntitySet="Lesson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Links_Define_Itqan" Association="Self.FK_Links_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Links_Lang1" Association="Self.FK_Links_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plan_Studie_Define_Itqan" Association="Self.FK_Plan_Studie_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Plan_Studie" EntitySet="Plan_Studie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plan_Studie_Lang1" Association="Self.FK_Plan_Studie_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Plan_Studie" EntitySet="Plan_Studie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Police_Define_Itqan" Association="Self.FK_Police_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Police" EntitySet="Police" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Police_Lang1" Association="Self.FK_Police_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Police" EntitySet="Police" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Required_IT_Define_Itqan" Association="Self.FK_Required_IT_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Required_IT" EntitySet="Required_IT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Required_IT_Lang1" Association="Self.FK_Required_IT_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Required_IT" EntitySet="Required_IT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Service_anther_Define_Itqan" Association="Self.FK_Service_anther_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Service_anther" EntitySet="Service_anther" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_Define_Itqan" Association="Self.FK_Video_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Video" EntitySet="Video" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Why_Itqan_Define_Itqan" Association="Self.FK_Why_Itqan_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Why_Itqan" EntitySet="Why_Itqan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Why_Itqan_Lang1" Association="Self.FK_Why_Itqan_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Why_Itqan" EntitySet="Why_Itqan" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ItqanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Card_Feture">
+          <Key>
+            <PropertyRef Name="ID_Star" />
+          </Key>
+          <Property Name="ID_Star" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Star_card" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Card_Feture_Define_Itqan" FromRole="Card_Feture" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Card_Feture_Lang1" FromRole="Card_Feture" ToRole="Lang1" />
+          <Property Name="ImageCard" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Categore_People">
+          <Key>
+            <PropertyRef Name="ID_categore" />
+          </Key>
+          <Property Name="ID_categore" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Categore_Age" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descreption_Categore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Categore_People_Define_Itqan" FromRole="Categore_People" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Categore_People_Lang1" FromRole="Categore_People" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="ID_register" />
+          </Key>
+          <Property Name="ID_register" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descreption_condition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Condition_Define_Itqan" FromRole="Condition" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Condition_Lang1" FromRole="Condition" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Contact_Withme">
+          <Key>
+            <PropertyRef Name="ID_contact" />
+          </Key>
+          <Property Name="ID_contact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Subject" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="id_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Contact_Withme_Define_Itqan" FromRole="Contact_Withme" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Contact_Withme_Lang1" FromRole="Contact_Withme" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Content_course">
+          <Key>
+            <PropertyRef Name="ID_content" />
+          </Key>
+          <Property Name="ID_content" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Content_course_Define_Itqan" FromRole="Content_course" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Content_course_Lang1" FromRole="Content_course" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Feture_Itqan">
+          <Key>
+            <PropertyRef Name="ID_Feutre" />
+          </Key>
+          <Property Name="ID_Feutre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descreption_Feture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Feture_Itqan_Define_Itqan" FromRole="Feture_Itqan" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Feture_Itqan_Lang1" FromRole="Feture_Itqan" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Goals">
+          <Key>
+            <PropertyRef Name="ID_Goals" />
+          </Key>
+          <Property Name="ID_Goals" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gaol" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Define" Type="Int32" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang11" Relationship="ItqanModel.FK_Goals_Lang1" FromRole="Goals" ToRole="Lang1" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Goals_Define_Itqan" FromRole="Goals" ToRole="Define_Itqan" />
+        </EntityType>
+        <EntityType Name="Lesson">
+          <Key>
+            <PropertyRef Name="ID_Lesson" />
+          </Key>
+          <Property Name="ID_Lesson" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Desc_Lesson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Lesson_Define_Itqan" FromRole="Lesson" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Lesson_Lang1" FromRole="Lesson" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="ID_Link" />
+          </Key>
+          <Property Name="ID_Link" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descreption_Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMG_link" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Defien_id" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Links_Define_Itqan" FromRole="Links" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Links_Lang1" FromRole="Links" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Plan_Studie">
+          <Key>
+            <PropertyRef Name="ID_Plan" />
+          </Key>
+          <Property Name="ID_Plan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Plan_Studie1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Plan_Studie_Define_Itqan" FromRole="Plan_Studie" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Plan_Studie_Lang1" FromRole="Plan_Studie" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Police">
+          <Key>
+            <PropertyRef Name="ID_Ploce" />
+          </Key>
+          <Property Name="ID_Ploce" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Police1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Police_Define_Itqan" FromRole="Police" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Police_Lang1" FromRole="Police" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Required_IT">
+          <Key>
+            <PropertyRef Name="Required_id" />
+          </Key>
+          <Property Name="Required_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Required_Descreption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Required_IT_Define_Itqan" FromRole="Required_IT" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Required_IT_Lang1" FromRole="Required_IT" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Service_anther">
+          <Key>
+            <PropertyRef Name="ID_Services" />
+          </Key>
+          <Property Name="ID_Services" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Services" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descreption_services" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMG_Services" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link_services" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="id_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Service_anther_Define_Itqan" FromRole="Service_anther" ToRole="Define_Itqan" />
+        </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="ID_video" />
+          </Key>
+          <Property Name="ID_video" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Video1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Video_Define_Itqan" FromRole="Video" ToRole="Define_Itqan" />
+        </EntityType>
+        <EntityType Name="Why_Itqan">
+          <Key>
+            <PropertyRef Name="ID_WhyItqan" />
+          </Key>
+          <Property Name="ID_WhyItqan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Why_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_define" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Why_Itqan_Define_Itqan" FromRole="Why_Itqan" ToRole="Define_Itqan" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Why_Itqan_Lang1" FromRole="Why_Itqan" ToRole="Lang1" />
+        </EntityType>
+        <EntityContainer Name="ItqanEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Card_Feture" EntityType="Self.Card_Feture" />
+          <EntitySet Name="Categore_People" EntityType="Self.Categore_People" />
+          <EntitySet Name="Condition" EntityType="Self.Condition" />
+          <EntitySet Name="Contact_Withme" EntityType="Self.Contact_Withme" />
+          <EntitySet Name="Content_course" EntityType="Self.Content_course" />
+          <EntitySet Name="Feture_Itqan" EntityType="Self.Feture_Itqan" />
+          <EntitySet Name="Goals" EntityType="Self.Goals" />
+          <EntitySet Name="Lesson" EntityType="Self.Lesson" />
+          <EntitySet Name="Links" EntityType="Self.Links" />
+          <EntitySet Name="Plan_Studie" EntityType="Self.Plan_Studie" />
+          <EntitySet Name="Police" EntityType="Self.Police" />
+          <EntitySet Name="Required_IT" EntityType="Self.Required_IT" />
+          <EntitySet Name="Service_anther" EntityType="Self.Service_anther" />
+          <EntitySet Name="Video" EntityType="Self.Video" />
+          <EntitySet Name="Why_Itqan" EntityType="Self.Why_Itqan" />
+          <EntitySet Name="Course" EntityType="ItqanModel.Course" />
+          <EntitySet Name="IMAGE_header" EntityType="ItqanModel.IMAGE_header" />
+          <EntitySet Name="Lang1" EntityType="ItqanModel.Lang1" />
+          <AssociationSet Name="FK_Goals_Lang1" Association="ItqanModel.FK_Goals_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Goals" EntitySet="Goals" />
+          </AssociationSet>
+          <EntitySet Name="Define_Itqan" EntityType="ItqanModel.Define_Itqan" />
+          <AssociationSet Name="FK_Card_Feture_Define_Itqan" Association="ItqanModel.FK_Card_Feture_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Card_Feture" EntitySet="Card_Feture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categore_People_Define_Itqan" Association="ItqanModel.FK_Categore_People_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Categore_People" EntitySet="Categore_People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Condition_Define_Itqan" Association="ItqanModel.FK_Condition_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Condition" EntitySet="Condition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_Withme_Define_Itqan" Association="ItqanModel.FK_Contact_Withme_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Contact_Withme" EntitySet="Contact_Withme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Content_course_Define_Itqan" Association="ItqanModel.FK_Content_course_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Content_course" EntitySet="Content_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Course_Define_Itqan" Association="ItqanModel.FK_Course_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Define_Itqan_Lang1" Association="ItqanModel.FK_Define_Itqan_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feture_Itqan_Define_Itqan" Association="ItqanModel.FK_Feture_Itqan_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Feture_Itqan" EntitySet="Feture_Itqan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Goals_Define_Itqan" Association="ItqanModel.FK_Goals_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Goals" EntitySet="Goals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lesson_Define_Itqan" Association="ItqanModel.FK_Lesson_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Lesson" EntitySet="Lesson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Links_Define_Itqan" Association="ItqanModel.FK_Links_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plan_Studie_Define_Itqan" Association="ItqanModel.FK_Plan_Studie_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Plan_Studie" EntitySet="Plan_Studie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Police_Define_Itqan" Association="ItqanModel.FK_Police_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Police" EntitySet="Police" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Required_IT_Define_Itqan" Association="ItqanModel.FK_Required_IT_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Required_IT" EntitySet="Required_IT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Service_anther_Define_Itqan" Association="ItqanModel.FK_Service_anther_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Service_anther" EntitySet="Service_anther" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_Define_Itqan" Association="ItqanModel.FK_Video_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Video" EntitySet="Video" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Why_Itqan_Define_Itqan" Association="ItqanModel.FK_Why_Itqan_Define_Itqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Why_Itqan" EntitySet="Why_Itqan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Condition_Lang1" Association="ItqanModel.FK_Condition_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Condition" EntitySet="Condition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Police_Lang1" Association="ItqanModel.FK_Police_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Police" EntitySet="Police" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Required_IT_Lang1" Association="ItqanModel.FK_Required_IT_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Required_IT" EntitySet="Required_IT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Plan_Studie_Lang1" Association="ItqanModel.FK_Plan_Studie_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Plan_Studie" EntitySet="Plan_Studie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categore_People_Lang1" Association="ItqanModel.FK_Categore_People_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Categore_People" EntitySet="Categore_People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Content_course_Lang1" Association="ItqanModel.FK_Content_course_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Content_course" EntitySet="Content_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lesson_Lang1" Association="ItqanModel.FK_Lesson_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Lesson" EntitySet="Lesson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Feture_Lang1" Association="ItqanModel.FK_Card_Feture_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Card_Feture" EntitySet="Card_Feture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Why_Itqan_Lang1" Association="ItqanModel.FK_Why_Itqan_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Why_Itqan" EntitySet="Why_Itqan" />
+          </AssociationSet>
+          <EntitySet Name="Alnoor" EntityType="ItqanModel.Alnoor" />
+          <AssociationSet Name="FK_Alnoor_Define_Itqan1" Association="ItqanModel.FK_Alnoor_Define_Itqan1">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="Alnoor" EntitySet="Alnoor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alnoor_Lang1" Association="ItqanModel.FK_Alnoor_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Alnoor" EntitySet="Alnoor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feture_Itqan_Lang1" Association="ItqanModel.FK_Feture_Itqan_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Feture_Itqan" EntitySet="Feture_Itqan" />
+          </AssociationSet>
+          <EntitySet Name="FirstContentQuran" EntityType="ItqanModel.FirstContentQuran" />
+          <AssociationSet Name="FK_FirstContentQuran_Lang1" Association="ItqanModel.FK_FirstContentQuran_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="FirstContentQuran" EntitySet="FirstContentQuran" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_Withme_Lang1" Association="ItqanModel.FK_Contact_Withme_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Contact_Withme" EntitySet="Contact_Withme" />
+          </AssociationSet>
+          <EntitySet Name="App" EntityType="ItqanModel.App" />
+          <AssociationSet Name="FK_App_AppItqan" Association="ItqanModel.FK_App_AppItqan">
+            <End Role="Define_Itqan" EntitySet="Define_Itqan" />
+            <End Role="App" EntitySet="App" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Lang1" Association="ItqanModel.FK_App_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="App" EntitySet="App" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Links_Lang1" Association="ItqanModel.FK_Links_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMAGE_header_Lang1" Association="ItqanModel.FK_IMAGE_header_Lang1">
+            <End Role="Lang1" EntitySet="Lang1" />
+            <End Role="IMAGE_header" EntitySet="IMAGE_header" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="ID_course" />
+          </Key>
+          <Property Name="ID_course" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_Course" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Descreption_Course" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMG_course" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="dateStart" Type="DateTime" Precision="3" />
+          <Property Name="id_define" Type="Int32" />
+          <Property Name="endDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Course_Define_Itqan" FromRole="Course" ToRole="Define_Itqan" />
+        </EntityType>
+        <EntityType Name="IMAGE_header">
+          <Key>
+            <PropertyRef Name="ID_Image" />
+          </Key>
+          <Property Name="ID_Image" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="descreption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMG_Path" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_IMAGE_header_Lang1" FromRole="IMAGE_header" ToRole="Lang1" />
+        </EntityType>
+        <EntityType Name="Lang1">
+          <Key>
+            <PropertyRef Name="ID_lang" />
+          </Key>
+          <Property Name="ID_lang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_lang" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Goals" Relationship="ItqanModel.FK_Goals_Lang1" FromRole="Lang1" ToRole="Goals" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Define_Itqan_Lang1" FromRole="Lang1" ToRole="Define_Itqan" />
+          <NavigationProperty Name="Condition" Relationship="ItqanModel.FK_Condition_Lang1" FromRole="Lang1" ToRole="Condition" />
+          <NavigationProperty Name="Police" Relationship="ItqanModel.FK_Police_Lang1" FromRole="Lang1" ToRole="Police" />
+          <NavigationProperty Name="Required_IT" Relationship="ItqanModel.FK_Required_IT_Lang1" FromRole="Lang1" ToRole="Required_IT" />
+          <NavigationProperty Name="Plan_Studie" Relationship="ItqanModel.FK_Plan_Studie_Lang1" FromRole="Lang1" ToRole="Plan_Studie" />
+          <NavigationProperty Name="Categore_People" Relationship="ItqanModel.FK_Categore_People_Lang1" FromRole="Lang1" ToRole="Categore_People" />
+          <NavigationProperty Name="Content_course" Relationship="ItqanModel.FK_Content_course_Lang1" FromRole="Lang1" ToRole="Content_course" />
+          <NavigationProperty Name="Lesson" Relationship="ItqanModel.FK_Lesson_Lang1" FromRole="Lang1" ToRole="Lesson" />
+          <NavigationProperty Name="Card_Feture" Relationship="ItqanModel.FK_Card_Feture_Lang1" FromRole="Lang1" ToRole="Card_Feture" />
+          <NavigationProperty Name="Why_Itqan" Relationship="ItqanModel.FK_Why_Itqan_Lang1" FromRole="Lang1" ToRole="Why_Itqan" />
+          <NavigationProperty Name="Alnoor" Relationship="ItqanModel.FK_Alnoor_Lang1" FromRole="Lang1" ToRole="Alnoor" />
+          <NavigationProperty Name="Feture_Itqan" Relationship="ItqanModel.FK_Feture_Itqan_Lang1" FromRole="Lang1" ToRole="Feture_Itqan" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FirstContentQuran" Relationship="ItqanModel.FK_FirstContentQuran_Lang1" FromRole="Lang1" ToRole="FirstContentQuran" />
+          <NavigationProperty Name="Contact_Withme" Relationship="ItqanModel.FK_Contact_Withme_Lang1" FromRole="Lang1" ToRole="Contact_Withme" />
+          <NavigationProperty Name="App" Relationship="ItqanModel.FK_App_Lang1" FromRole="Lang1" ToRole="App" />
+          <NavigationProperty Name="Links" Relationship="ItqanModel.FK_Links_Lang1" FromRole="Lang1" ToRole="Links" />
+          <NavigationProperty Name="IMAGE_header" Relationship="ItqanModel.FK_IMAGE_header_Lang1" FromRole="Lang1" ToRole="IMAGE_header" />
+        </EntityType>
+        <Association Name="FK_Goals_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Goals" Role="Goals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Goals">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Define_Itqan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_Itqan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Vision" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Breife" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Card_Feture" Relationship="ItqanModel.FK_Card_Feture_Define_Itqan" FromRole="Define_Itqan" ToRole="Card_Feture" />
+          <NavigationProperty Name="Categore_People" Relationship="ItqanModel.FK_Categore_People_Define_Itqan" FromRole="Define_Itqan" ToRole="Categore_People" />
+          <NavigationProperty Name="Condition" Relationship="ItqanModel.FK_Condition_Define_Itqan" FromRole="Define_Itqan" ToRole="Condition" />
+          <NavigationProperty Name="Contact_Withme" Relationship="ItqanModel.FK_Contact_Withme_Define_Itqan" FromRole="Define_Itqan" ToRole="Contact_Withme" />
+          <NavigationProperty Name="Content_course" Relationship="ItqanModel.FK_Content_course_Define_Itqan" FromRole="Define_Itqan" ToRole="Content_course" />
+          <NavigationProperty Name="Course" Relationship="ItqanModel.FK_Course_Define_Itqan" FromRole="Define_Itqan" ToRole="Course" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Define_Itqan_Lang1" FromRole="Define_Itqan" ToRole="Lang1" />
+          <NavigationProperty Name="Feture_Itqan" Relationship="ItqanModel.FK_Feture_Itqan_Define_Itqan" FromRole="Define_Itqan" ToRole="Feture_Itqan" />
+          <NavigationProperty Name="Goals" Relationship="ItqanModel.FK_Goals_Define_Itqan" FromRole="Define_Itqan" ToRole="Goals" />
+          <NavigationProperty Name="Lesson" Relationship="ItqanModel.FK_Lesson_Define_Itqan" FromRole="Define_Itqan" ToRole="Lesson" />
+          <NavigationProperty Name="Links" Relationship="ItqanModel.FK_Links_Define_Itqan" FromRole="Define_Itqan" ToRole="Links" />
+          <NavigationProperty Name="Plan_Studie" Relationship="ItqanModel.FK_Plan_Studie_Define_Itqan" FromRole="Define_Itqan" ToRole="Plan_Studie" />
+          <NavigationProperty Name="Police" Relationship="ItqanModel.FK_Police_Define_Itqan" FromRole="Define_Itqan" ToRole="Police" />
+          <NavigationProperty Name="Required_IT" Relationship="ItqanModel.FK_Required_IT_Define_Itqan" FromRole="Define_Itqan" ToRole="Required_IT" />
+          <NavigationProperty Name="Service_anther" Relationship="ItqanModel.FK_Service_anther_Define_Itqan" FromRole="Define_Itqan" ToRole="Service_anther" />
+          <NavigationProperty Name="Video" Relationship="ItqanModel.FK_Video_Define_Itqan" FromRole="Define_Itqan" ToRole="Video" />
+          <NavigationProperty Name="Why_Itqan" Relationship="ItqanModel.FK_Why_Itqan_Define_Itqan" FromRole="Define_Itqan" ToRole="Why_Itqan" />
+          <NavigationProperty Name="Alnoor" Relationship="ItqanModel.FK_Alnoor_Define_Itqan1" FromRole="Define_Itqan" ToRole="Alnoor" />
+          <NavigationProperty Name="App" Relationship="ItqanModel.FK_App_AppItqan" FromRole="Define_Itqan" ToRole="App" />
+        </EntityType>
+        <Association Name="FK_Card_Feture_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Card_Feture" Role="Card_Feture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Card_Feture">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categore_People_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Categore_People" Role="Categore_People" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Categore_People">
+              <PropertyRef Name="ID_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Condition_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Condition" Role="Condition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Condition">
+              <PropertyRef Name="ID_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_Withme_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Contact_Withme" Role="Contact_Withme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Contact_Withme">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Content_course_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Content_course" Role="Content_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Content_course">
+              <PropertyRef Name="ID_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Course_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Course" Role="Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Define_Itqan_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Define_Itqan">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feture_Itqan_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Feture_Itqan" Role="Feture_Itqan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Feture_Itqan">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Goals_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Goals" Role="Goals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Goals">
+              <PropertyRef Name="ID_Define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lesson_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Lesson" Role="Lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Lesson">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Links_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Links" Role="Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="Defien_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Plan_Studie_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Plan_Studie" Role="Plan_Studie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Plan_Studie">
+              <PropertyRef Name="ID_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Police_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Police" Role="Police" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Police">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Required_IT_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Required_IT" Role="Required_IT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Required_IT">
+              <PropertyRef Name="Id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Service_anther_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Service_anther" Role="Service_anther" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Service_anther">
+              <PropertyRef Name="id_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Video" Role="Video" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Video">
+              <PropertyRef Name="ID_Define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Why_Itqan_Define_Itqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Why_Itqan" Role="Why_Itqan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Why_Itqan">
+              <PropertyRef Name="ID_define" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Condition_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Condition" Role="Condition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Condition">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Police_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Police" Role="Police" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Police">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Required_IT_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Required_IT" Role="Required_IT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Required_IT">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Plan_Studie_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Plan_Studie" Role="Plan_Studie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Plan_Studie">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categore_People_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Categore_People" Role="Categore_People" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Categore_People">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Content_course_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Content_course" Role="Content_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Content_course">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lesson_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Lesson" Role="Lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Lesson">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Feture_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Card_Feture" Role="Card_Feture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Card_Feture">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Why_Itqan_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Why_Itqan" Role="Why_Itqan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Why_Itqan">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Alnoor">
+          <Key>
+            <PropertyRef Name="ID_Alnoor" />
+          </Key>
+          <Property Name="ID_Alnoor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Lang" Type="Int32" />
+          <Property Name="AdvantageAlnoor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Itqan" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_Alnoor_Define_Itqan1" FromRole="Alnoor" ToRole="Define_Itqan" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_Alnoor_Lang1" FromRole="Alnoor" ToRole="Lang1" />
+        </EntityType>
+        <Association Name="FK_Alnoor_Define_Itqan1">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.Alnoor" Role="Alnoor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alnoor">
+              <PropertyRef Name="ID_Itqan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alnoor_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Alnoor" Role="Alnoor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Alnoor">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feture_Itqan_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Feture_Itqan" Role="Feture_Itqan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Feture_Itqan">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FirstContentQuran">
+          <Key>
+            <PropertyRef Name="ID_Content" />
+          </Key>
+          <Property Name="ID_Content" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Lang" Type="Int32" />
+          <Property Name="FirstContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_FirstContentQuran_Lang1" FromRole="FirstContentQuran" ToRole="Lang1" />
+        </EntityType>
+        <Association Name="FK_FirstContentQuran_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.FirstContentQuran" Role="FirstContentQuran" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="FirstContentQuran">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_Withme_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Contact_Withme" Role="Contact_Withme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Contact_Withme">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="App">
+          <Key>
+            <PropertyRef Name="ID_App" />
+          </Key>
+          <Property Name="ID_App" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_App" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Desc_App" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Itqan" Type="Int32" />
+          <Property Name="Lang" Type="Int32" />
+          <NavigationProperty Name="Define_Itqan" Relationship="ItqanModel.FK_App_AppItqan" FromRole="App" ToRole="Define_Itqan" />
+          <NavigationProperty Name="Lang1" Relationship="ItqanModel.FK_App_Lang1" FromRole="App" ToRole="Lang1" />
+        </EntityType>
+        <Association Name="FK_App_AppItqan">
+          <End Type="ItqanModel.Define_Itqan" Role="Define_Itqan" Multiplicity="0..1" />
+          <End Type="ItqanModel.App" Role="App" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Define_Itqan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="App">
+              <PropertyRef Name="ID_Itqan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.App" Role="App" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="App">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Links_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.Links" Role="Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMAGE_header_Lang1">
+          <End Type="ItqanModel.Lang1" Role="Lang1" Multiplicity="0..1" />
+          <End Type="ItqanModel.IMAGE_header" Role="IMAGE_header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lang1">
+              <PropertyRef Name="ID_lang" />
+            </Principal>
+            <Dependent Role="IMAGE_header">
+              <PropertyRef Name="Lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ItqanModelStoreContainer" CdmEntityContainer="ItqanEntities">
+          <EntitySetMapping Name="Card_Feture">
+            <EntityTypeMapping TypeName="ItqanModel.Card_Feture">
+              <MappingFragment StoreEntitySet="Card_Feture">
+                <ScalarProperty Name="ImageCard" ColumnName="ImageCard" />
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_Star" ColumnName="ID_Star" />
+                <ScalarProperty Name="Star_card" ColumnName="Star_card" />
+                <ScalarProperty Name="id_define" ColumnName="id_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categore_People">
+            <EntityTypeMapping TypeName="ItqanModel.Categore_People">
+              <MappingFragment StoreEntitySet="Categore_People">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_categore" ColumnName="ID_categore" />
+                <ScalarProperty Name="Categore_Age" ColumnName="Categore_Age" />
+                <ScalarProperty Name="Descreption_Categore" ColumnName="Descreption_Categore" />
+                <ScalarProperty Name="ID_define" ColumnName="ID_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Condition">
+            <EntityTypeMapping TypeName="ItqanModel.Condition">
+              <MappingFragment StoreEntitySet="Condition">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_register" ColumnName="ID_register" />
+                <ScalarProperty Name="Descreption_condition" ColumnName="Descreption_condition" />
+                <ScalarProperty Name="ID_define" ColumnName="ID_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contact_Withme">
+            <EntityTypeMapping TypeName="ItqanModel.Contact_Withme">
+              <MappingFragment StoreEntitySet="Contact_Withme">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_contact" ColumnName="ID_contact" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="id_define" ColumnName="id_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Content_course">
+            <EntityTypeMapping TypeName="ItqanModel.Content_course">
+              <MappingFragment StoreEntitySet="Content_course">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_content" ColumnName="ID_content" />
+                <ScalarProperty Name="Content_desc" ColumnName="Content_desc" />
+                <ScalarProperty Name="ID_define" ColumnName="ID_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feture_Itqan">
+            <EntityTypeMapping TypeName="ItqanModel.Feture_Itqan">
+              <MappingFragment StoreEntitySet="Feture_Itqan">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_Feutre" ColumnName="ID_Feutre" />
+                <ScalarProperty Name="Descreption_Feture" ColumnName="Descreption_Feture" />
+                <ScalarProperty Name="id_define" ColumnName="id_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Goals">
+            <EntityTypeMapping TypeName="ItqanModel.Goals">
+              <MappingFragment StoreEntitySet="Goals">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_Goals" ColumnName="ID_Goals" />
+                <ScalarProperty Name="Gaol" ColumnName="Gaol" />
+                <ScalarProperty Name="ID_Define" ColumnName="ID_Define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lesson">
+            <EntityTypeMapping TypeName="ItqanModel.Lesson">
+              <MappingFragment StoreEntitySet="Lesson">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_Lesson" ColumnName="ID_Lesson" />
+                <ScalarProperty Name="Desc_Lesson" ColumnName="Desc_Lesson" />
+                <ScalarProperty Name="id_define" ColumnName="id_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Links">
+            <EntityTypeMapping TypeName="ItqanModel.Links">
+              <MappingFragment StoreEntitySet="Links">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_Link" ColumnName="ID_Link" />
+                <ScalarProperty Name="Descreption_Link" ColumnName="Descreption_Link" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="IMG_link" ColumnName="IMG_link" />
+                <ScalarProperty Name="Defien_id" ColumnName="Defien_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plan_Studie">
+            <EntityTypeMapping TypeName="ItqanModel.Plan_Studie">
+              <MappingFragment StoreEntitySet="Plan_Studie">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_Plan" ColumnName="ID_Plan" />
+                <ScalarProperty Name="Plan_Studie1" ColumnName="Plan_Studie" />
+                <ScalarProperty Name="ID_define" ColumnName="ID_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Police">
+            <EntityTypeMapping TypeName="ItqanModel.Police">
+              <MappingFragment StoreEntitySet="Police">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_Ploce" ColumnName="ID_Ploce" />
+                <ScalarProperty Name="Police1" ColumnName="Police" />
+                <ScalarProperty Name="id_define" ColumnName="id_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Required_IT">
+            <EntityTypeMapping TypeName="ItqanModel.Required_IT">
+              <MappingFragment StoreEntitySet="Required_IT">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="Required_id" ColumnName="Required_id" />
+                <ScalarProperty Name="Required_Descreption" ColumnName="Required_Descreption" />
+                <ScalarProperty Name="Id_define" ColumnName="Id_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service_anther">
+            <EntityTypeMapping TypeName="ItqanModel.Service_anther">
+              <MappingFragment StoreEntitySet="Service_anther">
+                <ScalarProperty Name="ID_Services" ColumnName="ID_Services" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+                <ScalarProperty Name="Descreption_services" ColumnName="Descreption_services" />
+                <ScalarProperty Name="IMG_Services" ColumnName="IMG_Services" />
+                <ScalarProperty Name="link_services" ColumnName="link_services" />
+                <ScalarProperty Name="id_define" ColumnName="id_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Video">
+            <EntityTypeMapping TypeName="ItqanModel.Video">
+              <MappingFragment StoreEntitySet="Video">
+                <ScalarProperty Name="ID_video" ColumnName="ID_video" />
+                <ScalarProperty Name="Video1" ColumnName="Video" />
+                <ScalarProperty Name="ID_Define" ColumnName="ID_Define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Why_Itqan">
+            <EntityTypeMapping TypeName="ItqanModel.Why_Itqan">
+              <MappingFragment StoreEntitySet="Why_Itqan">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_WhyItqan" ColumnName="ID_WhyItqan" />
+                <ScalarProperty Name="Why_1" ColumnName="Why_1" />
+                <ScalarProperty Name="ID_define" ColumnName="ID_define" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Course">
+            <EntityTypeMapping TypeName="ItqanModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="id_define" ColumnName="id_define" />
+                <ScalarProperty Name="dateStart" ColumnName="dateStart" />
+                <ScalarProperty Name="IMG_course" ColumnName="IMG_course" />
+                <ScalarProperty Name="Descreption_Course" ColumnName="Descreption_Course" />
+                <ScalarProperty Name="Name_Course" ColumnName="Name_Course" />
+                <ScalarProperty Name="ID_course" ColumnName="ID_course" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMAGE_header">
+            <EntityTypeMapping TypeName="ItqanModel.IMAGE_header">
+              <MappingFragment StoreEntitySet="IMAGE_header">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="IMG_Path" ColumnName="IMG_Path" />
+                <ScalarProperty Name="descreption" ColumnName="descreption" />
+                <ScalarProperty Name="Titile" ColumnName="Titile" />
+                <ScalarProperty Name="ID_Image" ColumnName="ID_Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lang1">
+            <EntityTypeMapping TypeName="ItqanModel.Lang1">
+              <MappingFragment StoreEntitySet="Lang1">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name_lang" ColumnName="Name_lang" />
+                <ScalarProperty Name="ID_lang" ColumnName="ID_lang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Define_Itqan">
+            <EntityTypeMapping TypeName="ItqanModel.Define_Itqan">
+              <MappingFragment StoreEntitySet="Define_Itqan">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="Breife" ColumnName="Breife" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Vision" ColumnName="Vision" />
+                <ScalarProperty Name="Name_Itqan" ColumnName="Name_Itqan" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Alnoor">
+            <EntityTypeMapping TypeName="ItqanModel.Alnoor">
+              <MappingFragment StoreEntitySet="Alnoor">
+                <ScalarProperty Name="ID_Itqan" ColumnName="ID_Itqan" />
+                <ScalarProperty Name="AdvantageAlnoor" ColumnName="AdvantageAlnoor" />
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_Alnoor" ColumnName="ID_Alnoor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FirstContentQuran">
+            <EntityTypeMapping TypeName="ItqanModel.FirstContentQuran">
+              <MappingFragment StoreEntitySet="FirstContentQuran">
+                <ScalarProperty Name="FirstContent" ColumnName="FirstContent" />
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_Content" ColumnName="ID_Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App">
+            <EntityTypeMapping TypeName="ItqanModel.App">
+              <MappingFragment StoreEntitySet="App">
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ID_Itqan" ColumnName="ID_Itqan" />
+                <ScalarProperty Name="Desc_App" ColumnName="Desc_App" />
+                <ScalarProperty Name="Name_App" ColumnName="Name_App" />
+                <ScalarProperty Name="ID_App" ColumnName="ID_App" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

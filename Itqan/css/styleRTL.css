@@ -1,0 +1,36 @@
+
+
+
+.features-icon-box .features-info h4 {
+    margin-right: 55px !important;
+    padding-top:10px!important;
+    font-size:18px;
+}
+.features-icon-box .features-info p {
+    padding-top: 10px !important;
+    font-size:15px;
+}
+.logo-nav {
+    float: right;
+    line-height: 60px;
+}
+
+.social-icons ul{
+    float:left;
+}
+.video-caption-main .video-caption .video-icon {
+    float: right;
+}
+.video-caption .video-caption-info{
+    margin-right: 100px;
+}
+
+
+/*.timeline .timeline-item {
+    float: right;
+    
+}*/
+
+
+
+

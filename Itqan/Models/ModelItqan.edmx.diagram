@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3466e2ce46bf44feae2327530514edb9" Name="Diagram1">
+        <EntityTypeShape EntityType="ItqanModel.Card_Feture" Width="1.5" PointX="12.125" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Categore_People" Width="2.375" PointX="14" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Condition" Width="1.5" PointX="8.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Contact_Withme" Width="1.5" PointX="10.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Content_course" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Feture_Itqan" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Goals" Width="1.5" PointX="3" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Lesson" Width="1.5" PointX="6.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Links" Width="1.5" PointX="3" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Plan_Studie" Width="1.5" PointX="0.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Police" Width="1.5" PointX="3" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Required_IT" Width="1.5" PointX="3" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Service_anther" Width="1.5" PointX="3" PointY="38" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Video" Width="1.5" PointX="3" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Why_Itqan" Width="1.5" PointX="3" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItqanModel.Course" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="ItqanModel.IMAGE_header" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ItqanModel.Lang1" Width="1.5" PointX="0.75" PointY="3.875" />
+        <AssociationConnector Association="ItqanModel.FK_Goals_Lang1" />
+        <EntityTypeShape EntityType="ItqanModel.Define_Itqan" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="ItqanModel.FK_Card_Feture_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Categore_People_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Condition_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Contact_Withme_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Content_course_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Course_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Define_Itqan_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Feture_Itqan_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Goals_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Lesson_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Links_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Plan_Studie_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Police_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Required_IT_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Service_anther_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Video_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Why_Itqan_Define_Itqan" />
+        <AssociationConnector Association="ItqanModel.FK_Condition_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Police_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Required_IT_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Plan_Studie_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Categore_People_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Content_course_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Lesson_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Card_Feture_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Why_Itqan_Lang1" />
+        <EntityTypeShape EntityType="ItqanModel.Alnoor" Width="1.5" PointX="5.25" PointY="3.125" />
+        <AssociationConnector Association="ItqanModel.FK_Alnoor_Define_Itqan1" />
+        <AssociationConnector Association="ItqanModel.FK_Alnoor_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Feture_Itqan_Lang1" />
+        <EntityTypeShape EntityType="ItqanModel.FirstContentQuran" Width="1.5" PointX="3" PointY="11.125" />
+        <AssociationConnector Association="ItqanModel.FK_FirstContentQuran_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Contact_Withme_Lang1" />
+        <EntityTypeShape EntityType="ItqanModel.App" Width="1.5" PointX="5.375" PointY="0.75" />
+        <AssociationConnector Association="ItqanModel.FK_App_AppItqan" />
+        <AssociationConnector Association="ItqanModel.FK_App_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_Links_Lang1" />
+        <AssociationConnector Association="ItqanModel.FK_IMAGE_header_Lang1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,42 @@
+﻿
+@using Itqan.Models
+@model LoginViewModel
+@{
+
+    ViewBag.Title = "lo";
+    Layout = "~/Views/Shared/_LayoutLoginRTL2.cshtml";
+}
+
+
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @*<input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">*@
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", id = "exampleInputEmail" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @*<input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">*@
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control", id = "exampleInputPassword" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <div class="custom-control custom-checkbox small">
+            @Html.CheckBoxFor(m => m.RememberMe, new { @class = "custom-control-input" })
+            <label class="custom-control-label" for="customCheck">تذكرني </label>
+        </div>
+    </div>
+
+
+
+    <input type="submit" value="تسجيل الدخول" class="btn btn-primary btn-user btn-block" />
+
+}
+
+
+

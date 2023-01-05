@@ -1,0 +1,86 @@
+﻿  <!--Start Footer-->
+@using Itqan
+@using Itqan.Ressourse
+@using Itqan.Models
+@{
+    ItqanEntities db = new ItqanEntities();
+
+
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null && userLang["langId"]!=null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+<footer class="" style="">
+    <div class="container">
+        <div class="row">
+
+            @if (langId == 1)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="https://youtube.com/channel/UCQ2APXnE8QfEWpQgrQJoCfA" target="_blank"><i class="fa fa-youtube-play " style="color:#fff;font-size:25px;width:50px;"></i></a></li>
+                            <li><a href="https://instagram.com/itqanq?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fa fa-instagram" style="color:#fff;font-size:25px;width:50px;"></i></a></li>
+                            <li><a href="https://www.facebook.com/QuranReadingLearning/?ref=pages_you_manage" target="_blank"><i class="fa fa-facebook" style="color:#fff;font-size:25px;width:50px;"></i></a></li>
+                            <li> <a href="https://twitter.com/itqanq1?s=11" target="_blank"><i class="fa fa-twitter" style="color:#fff;font-size:25px;width:50px;"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-md-8 col-sm-6 col-xs-6">
+                    <div class="copyright mt-5 ">
+                        <p style="font-size:16px;color:#fff;">
+                            @*Copyright © 2016 All Rights reserved by: <a href="#">Template Stock</a>*@
+                            @resourse.Privace &nbsp;|
+                            <a href="~/Home/Quran" style="color:#fff;">|@resourse.Condition</a>&nbsp;|
+                            <a href="~/Home/FAQ" style="color:#fff;">@resourse.FAQ</a>
+                          
+
+                        </p>
+                    </div>
+                </div>
+
+            }
+            else
+            {
+        <div class="col-md-8 col-sm-6 col-xs-6">
+            <div class="copyright mt-5 ">
+                <p style="font-size:16px;color:#fff;">
+                    @*Copyright © 2016 All Rights reserved by: <a href="#">Template Stock</a>*@
+                    @resourse.Privace &nbsp;|
+                    <a href="~/Home/Quran" style="color:#fff;">|@resourse.Condition</a>&nbsp;|
+                    <a href="~/Home/FAQ" style="color:#fff;">@resourse.FAQ</a>
+               
+                </p>
+            </div>
+        </div>
+
+
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="#" target="_blank"><i class="fa fa-youtube-play " style="color:#fff;font-size:25px;width:50px;"></i></a></li>
+                            <li><a href="https://www.instagram.com/itqan.q/" target="_blank"><i class="fa fa-instagram" style="color:#fff;font-size:25px;width:50px;"></i></a></li>
+                            <li><a href="https://www.facebook.com/%D9%85%D9%86%D8%B5%D8%A9-%D8%A5%D8%AA%D9%82%D8%A7%D9%86-108078451410437" target="_blank"><i class="fa fa-facebook" style="color:#fff;font-size:25px;width:50px;"></i></a></li>
+                            <li> <a href="https://twitter.com/itqanq1?s=11" target="_blank"><i class="fa fa-twitter" style="color:#fff;font-size:25px;width:50px;"></i></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            }
+
+
+
+            <!--End social icons-->
+        </div> <!-- /.row-->
+    </div> <!-- /.container-->
+</footer>
+<!--End Footer-->

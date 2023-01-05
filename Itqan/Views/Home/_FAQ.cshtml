@@ -1,0 +1,225 @@
+﻿
+@using Itqan.Models
+@using Itqan.Ressourse
+@using System.Data.Entity;
+
+@{
+    ItqanEntities db = new ItqanEntities();
+
+
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+
+<section id="why-choose" class="section" style="background-color:#ffffff">
+    <div class="container-fluid">
+        <h2 class="card-title" style="color:#1f91d0;text-align:center;padding-bottom:20px;">
+            @resourse.Itqan
+        </h2>
+        <div class="row ">
+            @if (langId == 1)
+            {
+                <div class="col-md-5">
+                    <div class="elementor-image" style="margin-top:100px;">
+                        <img src="~/Uploads/secondpage2.jpg" width="700" height="470" alt="" style="max-width:100%;">
+                    </div>
+                </div>
+
+
+                <div class="col-md-7">
+                    @foreach (var item in db.Define_Itqan.ToList().Where(a => a.Lang == langId))
+                    {
+                        <div class="section">
+                            <div class="card-body " style="border:none">
+                                <h2 class="card-title" style="color:#1f91d0;font-size: 35px;font-weight: 400;padding-bottom:20px;"> @resourse.aboutus</h2>
+                                <p class="card-text" style="color:#727982;font-weight:600;font-size:17px;">@item.Breife</p>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            }
+            else
+            {
+                <div class="col-md-7">
+                    @foreach (var item in db.Define_Itqan.ToList().Where(a => a.Lang == langId))
+                    {
+                        <div class="section">
+                            <div class="card-body " style="border:none">
+                                <h2 class="card-title" style="color:#1f91d0;font-size: 35px;font-weight: 400;padding-bottom:20px;">@resourse.aboutus </h2>
+                                <p class="card-text" style="color:#727982;font-weight:600;font-size:17px;">@item.Breife</p>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <div class="col-md-5">
+                    <div class="elementor-image" style="margin-top:100px;">
+                        <img src="~/Uploads/secondpage2.jpg" width="700" height="470" alt="" style="max-width:100%;">
+                    </div>
+                </div>
+
+
+
+
+            }
+
+
+        </div> <!--/.row-->
+    </div> <!--/.container-->
+</section>
+
+
+<section id="about" style="background:none;margin-bottom:10px!important;padding:0 0 !important">
+
+    <div class="row about-content">
+        <div class="col-md-12" style="">
+            <div class="features-icon-box pt-5">
+                <div class="features-icon">
+                    @*<i class="fa fa-object-group " style="color: #007bff; "></i>*@
+                    @*<img src="~/Uploads/education.png" />*@
+                </div>
+                <div class="features-info shadow p-3 mb-5 bg-white rounded " style=" ">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;"> @resourse.benifits</h3>
+                    <ul>
+                        @foreach (var item in db.Feture_Itqan.Where(a => a.Lang == langId))
+                        {
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Descreption_Feture
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+                <div class="features-info shadow p-3 mb-5 bg-white rounded " style=" ">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;"> @resourse.how</h3>
+                    <ul>
+
+                        <li style="font-size:17px;">
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                           @resourse.howReg
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div class="features-info shadow p-3 mb-5 bg-white rounded " style=" ">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;">
+                        @resourse.HowIns
+                    </h3>
+                    <ul>
+
+                        <li style="font-size:17px;">
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            @resourse.AnwerInst
+                        </li>
+
+
+                    </ul>
+                </div>
+
+
+                <div class="features-info  shadow p-3 mb-5 bg-white rounded " style="">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;">@resourse.Sesion </h3>
+                    <ul>
+                        @foreach (var item in db.Content_course.Where(a => a.Lang == langId))
+                        {
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Content_desc
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="features-info  shadow p-3 mb-5 bg-white rounded " style="">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;"> @resourse.plan</h3>
+                    <ul>
+                        @foreach (var item in db.Plan_Studie.Where(a => a.Lang == langId))
+                        {
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Plan_Studie1
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+
+                <div class="features-info  shadow p-3 mb-5 bg-white rounded " style="">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;">@resourse.Cat</h3>
+                    <ul>
+                        @foreach (var item in db.Categore_People.Where(a => a.Lang == langId))
+                        {
+
+                            @item.Categore_Age
+
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Descreption_Categore
+                            </li>
+
+                        }
+                    </ul>
+                    @*<p>مراعاة الفروق الفردية بين المتعلمين.</p>*@
+                </div>
+
+                <div class="features-info shadow p-3 mb-5 bg-white rounded " style=" ">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;">@resourse.WhatCondition</h3>
+                    <ul>
+                        @foreach (var item in db.Condition.Where(a => a.Lang == langId))
+                        {
+                            <li style="font-size:17px;">
+                                <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                @item.Descreption_condition
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+                <div class="features-info shadow p-3 mb-5 bg-white rounded " style=" ">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;">
+                        @resourse.HowChange
+                    </h3>
+                    <ul>
+
+                        <li style="font-size:17px;">
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            @resourse.AnswerInst
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <div class="features-info shadow p-3 mb-5 bg-white rounded " style=" ">
+                    <h3 style="color: #1f91d0;padding-bottom:10px;">
+                        @resourse.CanFather
+                    </h3>
+                    <ul>
+
+                        <li style="font-size:17px;">
+                            <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                            @resourse.AnswerCan
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

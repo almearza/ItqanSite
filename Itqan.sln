@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itqan", "Itqan\Itqan.csproj", "{8EBA2C13-D41E-4116-87CF-7F6A012EA1AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EBA2C13-D41E-4116-87CF-7F6A012EA1AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EBA2C13-D41E-4116-87CF-7F6A012EA1AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EBA2C13-D41E-4116-87CF-7F6A012EA1AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EBA2C13-D41E-4116-87CF-7F6A012EA1AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB75DF25-94E0-43FC-8D1A-541BED2F8E43}
+	EndGlobalSection
+EndGlobal

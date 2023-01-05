@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Itqan.Models.Video>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+    <div class="form-horizontal form-label-left">
+        @foreach (var item in Model)
+        {
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                    الفديو التعريفي
+                    <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <video width="450" height="400" controls>
+                        <source src="~/Video/@Html.DisplayFor(modelitem => item.Video1)" type="video/mp4">
+                        منصة اتقان
+
+                    </video>
+                </div>
+            </div>
+
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                @Html.ActionLink("تعديل", "Edit", new { id = item.ID_video })
+            </div>
+        </div>
+        }
+    </div>
+       

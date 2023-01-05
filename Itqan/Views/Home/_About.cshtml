@@ -1,0 +1,47 @@
+﻿@using Itqan.Models
+@using Itqan.Ressourse
+@{
+    ItqanEntities db = new ItqanEntities();
+
+
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null && userLang["langId"] != null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+
+<section id="" class="section" style="">
+
+    <div class="container ">
+        <div class="title-box text-center">
+            <h2 class="title" style="color:#0d84a4;">@resourse.feturs</h2>
+        </div>
+
+        <div class="row " style="display:flex;display:-webkit-flex;flex-wrap: wrap;">
+            <!-- Features Icon-->
+            @foreach (var item in db.Card_Feture.Where(a => a.Lang == langId))
+            {<!--shadow p-3  bg-white rounded-->
+                <div class="col-md-6 pb-5" style="">
+                    <div class="features-icon-box" style="">
+                        <div class="features-icon">
+                            <img src="~/Uploads/@item.ImageCard" />
+                        </div>
+                        <div class="features-info" style="">
+                            <!--color:#727982;font-weight:400;font-size:16px;line-height:1.6 ;-->
+                            <h4 style="">@item.Star_card</h4>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div> <!-- /.container-->
+</section>
+

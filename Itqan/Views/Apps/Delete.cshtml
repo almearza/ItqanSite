@@ -1,0 +1,54 @@
+﻿@model Itqan.Models.App
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_App)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_App)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desc_App)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desc_App)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Define_Itqan.Name_Itqan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Define_Itqan.Name_Itqan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lang1.Name_lang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lang1.Name_lang)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> 
+            <a href="~/Apps/Index" class="btn btn-default">رجوع</a>
+        </div>
+    }
+</div>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Itqan.Models.Card_Feture>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+    @using (Html.BeginForm())
+    {
+    <table class="table container text-center pb-5">
+        <tr>
+            <th>
+                @Html.DropDownList("Lang", null, htmlAttributes: new { @class = "form-control" })
+            </th>
+            <th class="col-md-1">
+                <input type="submit" value="بحث" class="btn btn-primary" style="max-width:150px;" />
+            </th>
+            <th class="col-md-4">
+                <a href="~/Card_Feture/Create" class="btn btn-primary">إضافة</a>
+            </th>
+        </tr>
+    </table>
+
+    }
+
+<table class="table container text-center">
+    <tr>
+        <th>
+            مزايا اتقان
+        </th>
+        <th>
+            الصورة
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Star_card)
+        </td>
+        <td>
+            <img src="~/Uploads/@item.ImageCard" height="45" width="30" />
+        </td>
+        
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.ID_Star }) 
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID_Star }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Star })*@
+        </td>
+    </tr>
+}
+
+</table>

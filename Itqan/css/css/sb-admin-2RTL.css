@@ -1,0 +1,72 @@
+
+.sidebar .nav-item .nav-link {
+  
+    text-align: right; /**€Ì—  „‰ Ì”«— «·Ï Ì„Ì‰*/
+  
+}
+
+    .sidebar .nav-item .nav-link i {
+        margin-left: 0.25rem; /**€Ì—  „‰ Ì„Ì‰ «·Ï Ì”«—*/
+    }
+
+    .sidebar .nav-item .nav-link[data-toggle="collapse"]::after {
+       
+        float: left; /**€Ì—  „‰ Ì„Ì‰ «·Ï Ì”«—*/
+     
+    }
+
+.sidebar .sidebar-heading {
+    text-align: right; /* €Ì— „‰ Ì”«— «·Ï Ì„Ì‰**/
+}
+.sidebar .nav-item .collapse .collapse-inner .collapse-item,
+.sidebar .nav-item .collapsing .collapse-inner .collapse-item {
+  
+    text-align: right;
+}
+
+.border-left-primary {
+    border-right: 0.25rem solid #4e73df !important;
+}
+
+.border-left-secondary {
+    border-right: 0.25rem solid #858796 !important;
+}
+
+
+.border-left-success {
+    border-right: 0.25rem solid #1cc88a !important;
+}
+
+.border-left-info {
+    border-right: 0.25rem solid #36b9cc !important;
+}
+.border-left-warning {
+    border-right: 0.25rem solid #f6c23e !important;
+}
+.border-left-danger {
+    border-right: 0.25rem solid #e74a3b !important;
+}
+.border-left-light {
+    border-right: 0.25rem solid #f8f9fc !important;
+}
+.border-left-dark {
+    border-right: 0.25rem solid #5a5c69 !important;
+}
+
+.row {
+   
+    text-align:right;
+}
+.text-gray-800 {
+    text-align:right;
+}
+
+.mb-4,
+.my-4 {
+    text-align: right;
+}
+
+.ml-auto,
+.mx-auto {
+    margin-right: auto !important;
+}

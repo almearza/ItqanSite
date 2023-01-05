@@ -1,0 +1,58 @@
+﻿@model Itqan.Models.Police
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal form-label-left">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID_Ploce)
+
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                اللغة
+                <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                @Html.DropDownList("Lang", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Lang, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                المنصة
+                <span class="required">*</span>
+            </label>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                @Html.DropDownList("id_define", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_define, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                الاحكام والشروط
+                <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                @Html.TextAreaFor(model => model.Police1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Police1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <button type="submit" class="btn btn-primary">تعديل</button>
+                <a href="~/Police/Index" class="btn btn-primary">رجوع</a>
+            </div>
+        </div>
+    </div>
+
+}
+
+

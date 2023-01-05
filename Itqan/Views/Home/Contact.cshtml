@@ -1,0 +1,108 @@
+﻿@using Itqan.Ressourse
+@model Itqan.Models.Contact_Withme
+@{
+    //Layout = "~/Views/Shared/_LayoutRTL.cshtml";
+    Layout = "~/Views/Shared/_LayoutSecondPages.cshtml";
+
+
+    //ItqanEntities db = new ItqanEntities();
+
+
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+
+
+<section id="page-header" class="parallax" style="height:500px; margin-bottom:20px;">
+    <div class="overlay"></div>
+    <div class="container">
+        @*<h1>Single Work</h1>*@
+        <!--Start Breadcrumb-->
+        <div class="breadcrumb">
+            <ul>
+                <li>
+                    @*<a href="index.html">Home</a>*@
+                </li>
+                <li>
+                    @*<a href="index.html#works">Our Works</a>*@
+                </li>
+                <li class="current">
+                    @*<a href="single-work.html">Project details</a>*@
+                </li>
+            </ul>
+        </div>
+        <!--End Breadcrumb-->
+    </div>
+</section>
+
+<section id="contact" class="section parallax" style="">
+
+    @*<div class="overlay"></div>*@
+    <div class="container" style="">
+        <div class="row">
+
+            <div class="title-box text-center white">
+                <h2 class="title" style="color:#0d84a4">@resourse.contactwithme</h2>
+            </div>
+        </div>
+
+        <!--Start contact form-->
+        <div class="col-md-8 col-md-offset-2 contact-form">
+
+            <div class="contact-info text-center">
+                @*<p style="color:#0d84a4">123 4567 890</p>
+            <p style="color:#0d84a4">123 lorem ipsum, 4th floor, lorem, ipsum </p>
+            <p style="color:#0d84a4">mail@demo.com </p>*@
+            </div>
+
+            @using (Html.BeginForm("Create", "Contact_Withme", FormMethod.Post, new { enctype = "multipart/form-data", id = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+        <div class="row">
+            <div class="error-validation">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+            <div class="alert alert-danger" id="error-div" style="display:none">
+                <span id="view-err">من فضلك قم بتعبئة البيانات</span>
+            </div>
+
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", id = "uploadIMG", placeholder =resourse.Fullname } })
+                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", id = "email", placeholder = resourse.Email, type = "email" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control", id = "subject", placeholder = resourse.subject, type = "text" } })
+                @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-12">
+                @Html.TextAreaFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", rows = "7", placeholder = "Message", id = "ContentMessage" } })
+                @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-12 text-right">
+                <input type="submit" value=@resourse.sendbutton id="btnSaveFormData" class="btn btn-green" style="background-color:#0d84a4;border-color:#fff;min-width:160px;" />
+            </div>
+        </div>
+            }
+        </div>
+        <!--End contact form-->
+
+    </div> <!-- /.container-->
+</section>
+@section scripts{
+
+}

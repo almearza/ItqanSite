@@ -1,0 +1,34 @@
+﻿@using Itqan.Models
+
+@{ 
+    ItqanEntities db = new ItqanEntities();
+    var data = db.Video.Find(1);
+}
+
+<section id="" class="section" style="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+
+            <div class="col-lg-8  col-md-8">
+                <div class="embed-responsive embed-responsive-16by9  shadow-1-strong rounded">
+
+                    <video   controls>
+                        <source src="~/Video/@data.Video1 " type="video/mp4">
+                        منثة اتقان
+
+                    </video>
+
+                </div>
+
+            </div>
+
+                <div class="col-md-2">
+
+                </div>
+
+
+            </div> <!-- /.row-->
+    </div> <!-- /.container-->
+</section>

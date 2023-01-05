@@ -1,0 +1,59 @@
+﻿@model Itqan.Models.Define_Itqan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutRTLCpanel.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Define_Itqan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_Itqan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_Itqan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Breife)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Breife)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lang1.Name_lang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lang1.Name_lang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

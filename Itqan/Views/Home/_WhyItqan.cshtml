@@ -1,0 +1,75 @@
+﻿
+@using Itqan.Models
+@using Itqan.Ressourse
+
+@using System.Data.Entity;
+
+@{
+    ItqanEntities db = new ItqanEntities();
+
+
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null && userLang["langId"] != null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+
+    <section id="about" style="background:none;margin-bottom:10px!important;padding:0 0 !important">
+
+        <div class="row about-content ">
+            <div class="col-md-12" style="">
+                <div class="container">
+                    <div class="features-info shadow p-3 mb-5 bg-white rounded " style=" ">
+                        <h3 style="color: #1f91d0;padding-bottom:10px;"> @resourse.Goals</h3>
+                        <ul>
+                            @foreach (var item in db.Goals.Where(a => a.Lang == langId))
+                            {
+                                <li style="font-size:17px;">
+                                    <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                    @item.Gaol
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+
+                    <div class="features-info  shadow p-3 mb-5 bg-white rounded " style="">
+                        <h3 style="color: #1f91d0;padding-bottom:10px;"> @resourse.why</h3>
+                        <ul>
+                            @foreach (var item in db.Why_Itqan.Where(a => a.Lang == langId))
+                            {
+                                <li style="font-size:17px;">
+                                    <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                    @item.Why_1
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
+                    <div class="features-info  shadow p-3 mb-5 bg-white rounded " style="">
+                        <h3 style="color: #1f91d0;padding-bottom:10px;">@resourse.benifits</h3>
+                        <ul>
+                            @foreach (var item in db.Content_course.Where(a => a.Lang == langId))
+                            {
+                                <li style="font-size:17px;">
+                                    <i class="ion-android-checkmark-circle" style="font-size:25px;color:#1f91d0;"></i>
+                                    @item.Content_desc
+                                </li>
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+    </section>
+

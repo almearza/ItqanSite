@@ -1,0 +1,46 @@
+﻿@using Itqan.Models
+@using Itqan.Ressourse
+@{ 
+    ItqanEntities db = new ItqanEntities();
+
+    
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null && userLang["langId"]!=null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+<section id="home" class="home">
+    <div class="slider-overlay"></div>
+    <div class="flexslider">
+        <ul class="slides scroll">
+            @foreach (var item in db.IMAGE_header.ToList().Where(a=>a.Lang == langId))
+            {
+            <li class="third">
+                <!--first-->
+                <div class="slider-text-wrapper">
+                    <div class="container">
+                        <div class="big" style="">@*منصـــة إتقــــان*@  @Html.DisplayFor(model => item.Titile)</div>
+                        <div class="small" style=" ">@*للتعـــليم الالكــتــــروني*@ @Html.DisplayFor(model => item.descreption)</div>
+                        <a href="https://itqanq.com/platform/Student/HandleAccount" class="middle btn btn-white" style="text-align:center;padding-top:10px;">@resourse.registerwithus</a>
+                    </div>
+                </div>
+                @*<img src="~/images/slider/1.jpg" alt="">*@
+                @*<img src="~/images/slider/slideitqan1.jpg"  alt="">*@
+                @*<img src="~/images/slider/header22.jpg" class="img-responsive" style="" alt="">*@
+                <img src="~/IMG/@Html.DisplayFor(model=>item.IMG_Path)" class="img-responsive" style="" alt="">
+
+            </li>
+
+          
+            }
+        </ul>
+    </div>
+</section>
+
+

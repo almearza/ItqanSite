@@ -1,0 +1,86 @@
+﻿@model Itqan.Models.Video
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+
+@using (Html.BeginForm("Edit", "Videos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="alert alert-danger" id="error-div" style="display:none">
+        <span id="view-err"></span>
+
+    </div>
+
+    <div class="form-horizontal form-label-left">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID_video)
+        @Html.HiddenFor(model => model.Video1)
+
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                المنصة
+                <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                @Html.DropDownList("ID_Define", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ID_Define, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                الفديو
+                <span class="required">*</span>
+            </label>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                @*@Html.EditorFor(model => model.IMG, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBox("upload", "", new { type = "file", id = "zz" })
+                @Html.ValidationMessageFor(model => model.Video1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <button type="submit" id="save" class="btn btn-primary"> تعديل</button>
+                <a href="~/Videos/Index" class="btn btn-primary">رجوع</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    }
+
+    @section scripts{
+        <script>
+            $(function () {
+                $("#save").click(function () {
+
+                    if ($("#zz").val() != "") {
+                        var filename = document.getElementById("zz").value;
+                        var ExtentionIMG = filename.substr(filename.lastIndexOf('.') + 1);
+                        var ValidExtention = ['mp4', 'MOV', 'AVI'];
+                        if ($.inArray(ExtentionIMG, ValidExtention) == -1) {
+                            $("#error-div").fadeIn();
+                            $("#view-err").append("اختر فديو بامتداد MP4/MOV");
+                            return false;
+                        }
+                        //check if the Images Size is valid (2mb)
+                        var myfileSize = document.getElementById("zz").files[0].size / 1024 / 1024;
+
+                        if (myfileSize > 50) {
+                            $("#error-div").fadeIn();
+                            $("#view-err").append("رجاء اختر فديو حجمها اقل من  50 ميغا بايت");
+                            return false;
+                        }
+                    }
+                });
+
+            });
+        </script>
+    }

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Itqan.Models.IMAGE_header>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+      
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            <table class="table container text-center pb-5">
+                <tr>
+                    <th>
+                        @Html.DropDownList("Lang", null, htmlAttributes: new { @class = "form-control" })
+                    </th>
+                    <th class="col-md-1">
+                        <input type="submit" value="بحث" class="btn btn-primary" style="max-width:150px;" />
+                    </th>
+                    <th class="col-md-4">
+                        <a href="~/IMAGE_header/Create" class="btn btn-primary">إضافة</a>
+                    </th>
+
+                </tr>
+            </table>
+
+
+        }
+        <table class="table container " style="text-align:right">
+            <tr>
+                <th>
+                    العنوان
+                </th>
+                <th>
+                    العبارات
+                </th>
+                <th>
+                    الصورة
+                </th>
+                <th>
+                    اللغة
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descreption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IMG_Path)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lang1.Name_lang)
+            </td>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.ID_Image })
+                @*@Html.ActionLink("Details", "Details", new { id=item.ID_Image }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Image })*@
+            </td>
+        </tr>
+            }
+
+        </table>
+
+    </div>
+

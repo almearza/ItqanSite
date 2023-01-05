@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNet.Identity
+@using Itqan.Models
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        var db = new ApplicationDbContext();
+        var UserId = User.Identity.GetUserId();
+        var currentUser = db.Users.Where(a => a.Id == UserId).SingleOrDefault();
+
+        @*<li style="text-align:right">
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>*@
+        <a href="javascript:document.getElementById('logoutForm').submit()" style="color:#fff">خروج</a>
+
+        <li class="nav-item dropdown no-arrow" style="display:inline-block">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> @currentUser.UserName</span>
+                <img class="img-profile rounded-circle" src="~/IMG/LableItqan.jpg">
+
+            </a>
+            <!-- Dropdown - User Information  alter-->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                @*<a class="dropdown-item" href="#" style="text-align:center">
+                    بياناتي
+                </a>
+                <a class="dropdown-item" href="~/Account/EditProfile" style="text-align:center">
+                    إعدادت
+                </a>*@
+                @*<a class="dropdown-item" href="~/Account/Register">
+                    <i class="fas fa-close fa-sm fa-fw mr-2 text-gray-400"></i>
+                    إضافة موظف
+                </a>*@
+
+                <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">
+                    <i class="fas fa-close fa-sm fa-fw mr-2 text-gray-400"></i>
+                    تسجيل الخروج
+                </a>
+
+                <div class="dropdown-divider"></div>
+
+            </div>
+
+            <!--end alter-->
+        </li>
+
+    }
+}
+else
+{
+    @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+    @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+}

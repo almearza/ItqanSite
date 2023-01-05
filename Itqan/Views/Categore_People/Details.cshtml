@@ -1,0 +1,51 @@
+﻿@model Itqan.Models.Categore_People
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutRTLCpanel.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Categore_People</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categore_Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categore_Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descreption_Categore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descreption_Categore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Define_Itqan.Name_Itqan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Define_Itqan.Name_Itqan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lang1.Name_lang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lang1.Name_lang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_categore }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

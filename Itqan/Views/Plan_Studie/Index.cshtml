@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Itqan.Models.Plan_Studie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+
+    @using (Html.BeginForm())
+    {
+        <table class="table container pb-5">
+            <tr>
+                <th>
+                    @Html.DropDownList("Lang", null, htmlAttributes: new { @class = "form-control" })
+                </th>
+                <th class="col-md-1">
+                    <input type="submit" value="بحث" class="btn btn-primary" style="max-width:150px;" />
+                </th>
+                <th class="col-md-4">
+                    <a href="~/Plan_Studie/Create" class="btn btn-primary">إضافة</a>
+                </th>
+
+                
+            </tr>
+        </table>
+
+    }
+
+<table class="table" style="text-align:center">
+    <tr>
+        <th>
+            خطط الدراسة
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plan_Studie1)
+        </td>
+       
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.ID_Plan }) 
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID_Plan }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Plan })*@
+        </td>
+    </tr>
+}
+
+</table>

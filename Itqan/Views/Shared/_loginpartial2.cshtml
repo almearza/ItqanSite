@@ -1,0 +1,45 @@
+﻿
+@using Microsoft.AspNet.Identity
+@using Itqan.Models
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        var db = new ApplicationDbContext();
+        var UserId = User.Identity.GetUserId();
+        var currentUser = db.Users.Where(a => a.Id == UserId).SingleOrDefault();
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                   aria-expanded="false">
+                    <img src="~/build/images/itqanlog.jpg" alt="">
+                    @*<span class=" fa fa-angle-down">@currentUser.UserName</span>*@
+                    <span class=" fa fa-angle-down">@currentUser.Firstname</span>
+
+
+                </a>
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li>
+                        <a href="javascript:document.getElementById('logoutForm').submit()">خروج</a>
+                        <i class="fa fa-sign-out pull-right"></i>
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+
+    }
+
+
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+

@@ -1,0 +1,47 @@
+﻿
+@using Itqan.Models
+@using System.Data.Entity;
+
+@{
+    ItqanEntities db = new ItqanEntities();
+
+
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null && userLang["langId"] != null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+<section id="why-choose" class="section">
+    <div class="container">
+        <div class="row">
+            <h2 class="title" style="color:#1f91d0;font-size: 40px;font-weight: 400;letter-spacing: 0px;">  الاهــــداف</h2>
+
+            <div class="col-lg-12 col-md-12">
+                <div class="about-content">
+                    @foreach (var item in db.Goals.ToList().Where(a => a.Lang == langId))
+                    {
+                        <ul>
+                            <li style="color:#727982;font-weight:600;font-size:17px;"><i class="ion-android-checkmark-circle" style="font-size:16px;color:#1f91d0;line-height:1.8;"></i> @item.Gaol</li>
+                        </ul>
+                    }
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+</section><!-- #about -->

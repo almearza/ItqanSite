@@ -1,0 +1,41 @@
+﻿@using Itqan.Models
+@{
+    ViewBag.Title = "GetallUser";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+@{
+         ItqanEntities db = new ItqanEntities();
+
+}
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800"> المستخدمون</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    @foreach (var item in db.AspNetUsers.ToList())
+                    {
+                        <tbody>
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.fullname</td>
+                                <td>@item.Email</td>
+                                <td>@item.UserName</td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

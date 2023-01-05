@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Itqan.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_Course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descreption_Course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMG_course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.endDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Define_Itqan.Name_Itqan)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name_Course)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descreption_Course)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.IMG_course)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Define_Itqan.Name_Itqan)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID_course }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID_course }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID_course })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.ActionLink("add", "Create")

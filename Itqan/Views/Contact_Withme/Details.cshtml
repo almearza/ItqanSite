@@ -1,0 +1,86 @@
+﻿@model Itqan.Models.Contact_Withme
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCpanelRTL2.cshtml";
+}
+
+
+
+    <table class="table container text-center">
+        <tr>
+            <th class="col-md-2">البريد الالكتروني </th>
+            <td class="col-md-10">
+                @Html.DisplayFor(model => model.Email)
+            </td>
+
+        </tr>
+        <tr>
+            <th class="col-md-2"> الاسم</th>
+            <td class="col-md-10">
+                @Html.DisplayFor(model => model.FullName)
+            </td>
+
+        </tr>
+        <tr>
+            <th class="col-md-2"> الجوال</th>
+            <td class="col-md-10">
+                @Html.DisplayFor(model => model.Mobile)
+            </td>
+
+        </tr>
+        <tr>
+            <th class="col-md-2"> العنوان</th>
+            <td class="col-md-10">
+                @Html.DisplayFor(model => model.Subject)
+            </td>
+
+        </tr>
+        <tr>
+            <th class="col-md-2"> </th>
+            <td class="col-md-10"></td>
+
+        </tr>
+        <tr>
+            <th class="col-md-2">  الرسالة</th>
+            <td class="col-md-10">
+                @Html.DisplayFor(model => model.Message)
+            </td>
+
+        </tr>
+        <tr>
+            <th class="col-md-2">التاريخ </th>
+            <td class="col-md-10">
+                @Html.DisplayFor(model => model.Date)
+            </td>
+
+        </tr>
+        <tr>
+            <th class="col-md-2"> </th>
+            <td class="col-md-10"></td>
+
+        </tr>
+        <tr>
+            <th class="col-md-2"> اللغة</th>
+            <td class="col-md-10">
+                @Html.DisplayFor(model => model.Lang1.Name_lang)
+            </td>
+
+        </tr>
+        
+        
+        <tr>
+            <td>
+                <a href="~/Contact_Withme/Index" class="btn btn-primary" style="max-width:150px;text-align:center;display:block"> رجوع</a>
+            </td>
+
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID_contact })*@ 
+
+        </tr>
+
+    </table>
+       
+
+      
+
+

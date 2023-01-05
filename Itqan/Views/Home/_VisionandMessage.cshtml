@@ -1,0 +1,94 @@
+﻿
+
+@using Itqan.Models
+@using Itqan.Ressourse
+
+@using System.Data.Entity;
+
+@{
+    ItqanEntities db = new ItqanEntities();
+
+
+    var userLang = Request.Cookies["userLang"];
+    int langId;
+    if (userLang != null && userLang["langId"] != null)
+    {
+        langId = int.Parse(userLang["langId"]);
+    }
+    else
+    {
+        langId = 1;
+    }
+}
+
+
+<section id="why-choose" class="section" style="background-color:#ffffff">
+    <div class="container">
+        <div class="row">
+            <div class="title-box text-center">
+                <h2 class="title text-center" style="color:#1f91d0;font-size: 35px;font-weight: 400;line-height:76px;letter-spacing: 0px; "> @resourse.vision &nbsp;@resourse.and &nbsp;@resourse.message </h2>
+            </div>
+            @if (langId == 1)
+            {
+                <div class="col-md-6">
+                    <div class="elementor-image pt-4">
+                        <img src="~/Uploads/a.jpg" alt="" style="width: 100%; max-width:100%;
+                                              height: 476px;opacity:1;border-style:solid;
+                                              border-color: var( --e-global-color-8d36ed4 );
+                                              border-radius: 30px 30px 30px 30px;">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="section">
+                        @foreach (var item in db.Define_Itqan.ToList().Where(a => a.Lang == langId))
+                        {
+                            <div class="card-body " style="border:none">
+                                <h2 class="card-title mb-5" style="color:#333333;text-align:center;font-size: 40px;">@resourse.vision </h2>
+                                <p class="card-text" style="color:#727982;font-weight:600;font-size:17px;">@item.Vision</p>
+                                <h2 class="card-title mb-5" style="color:#333333;text-align:center; font-size:40px;">@resourse.message</h2>
+                                <p class="card-text mb-5" style="color:#727982;font-weight:600;font-size:17px;">@item.Message</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+            }
+            else
+            {
+                <div class="col-md-6">
+
+                    <div class="section">
+                        @foreach (var item in db.Define_Itqan.ToList().Where(a => a.Lang == langId))
+                        {
+                            <div class="card-body " style="border:none">
+                                <h2 class="card-title mb-5" style="color:#333333;text-align:center;font-size: 40px;">@resourse.vision </h2>
+                                <p class="card-text" style="color:#727982;font-weight:600;font-size:17px;">@item.Vision</p>
+                                <h2 class="card-title mb-5" style="color:#333333;text-align:center; font-size:40px;">@resourse.message</h2>
+                                <p class="card-text mb-5" style="color:#727982;font-weight:600;font-size:17px;">@item.Message</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="elementor-image pt-4">
+                        <img src="~/Uploads/a.jpg" alt="" style="width: 100%; max-width:100%;
+                                              height: 476px;opacity:1;border-style:solid;
+                                              border-color: var( --e-global-color-8d36ed4 );
+                                              border-radius: 30px 30px 30px 30px;">
+                    </div>
+                </div>
+
+
+            }
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section>

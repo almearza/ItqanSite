@@ -1,0 +1,27 @@
+﻿@model Itqan.Models.Lang1
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutRTLCpanel.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Lang1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_lang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_lang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_lang }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
